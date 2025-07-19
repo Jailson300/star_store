@@ -129,6 +129,11 @@ ul a{
     color: #dddddd;
 }
 
+.social{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .foot-panel4{
     background-color: #222f3d;
     color: white;
@@ -163,3 +168,4 @@ ul a{
 .copyright{
     padding: 0;
 }
+
