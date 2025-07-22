@@ -69,6 +69,21 @@ header{
     overflow-wrap: break-word;
   }
 
+  .card1{
+    background-color: #ffffff;
+    padding: 13px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card1 p {
+    font-size: 14px;
+    color: black;
+    overflow-wrap: break-word;
+  }
+
   footer{
     margin-top: 15px;
 }
