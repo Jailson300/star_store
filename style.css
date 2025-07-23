@@ -7,9 +7,25 @@ body{
 header{
     background-color: aliceblue;
     display: flex;
-    height: 100px;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.cards1{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.user-id{
+    background-color: #ffffff;
+    padding: 13px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
 .user-info {
@@ -20,6 +36,7 @@ header{
 }
 
 .user-info input {
+    background-color: #cfcbcb;
 	padding: 0.5rem 1rem;
 	border: none;
 }
@@ -106,7 +123,7 @@ header{
     overflow-wrap: break-word;
   }
 
-  footer{
+footer{
     margin-top: 15px;
 }
 
@@ -155,20 +172,25 @@ header{
     justify-content: space-evenly;
 }
 
-ul{
-    margin: 20px;
-}
-
-ul a{
-    display: block;
-    font: 14px;
-    margin-top: 8px;
-    color: #dddddd;
+.foot-panel3 p{
+    color: #a8a8a8;
 }
 
 .social{
     display: flex;
     justify-content: space-evenly;
+}
+
+.social a{
+    display: flex;
+    font: 14px;
+    margin-top: 8px;
+    color: #dddddd;
+    text-decoration: none;
+}
+
+.social a:hover{
+    transform: scale(1.5);
 }
 
 .foot-panel4{
@@ -205,4 +227,45 @@ ul a{
 .copyright{
     padding: 0;
 }
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .head2 ul {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .head2 ul li {
+      margin: 10px 0;
+    }
+  
+    .head3 {
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .head3 button {
+      width: 100%;
+    }
+
+    .foot-desc{
+        max-width: 23.4%;
+    }
+
+    .cards1{
+        margin: 0;
+    }
+
+    .user-id{
+        width: 100%;
+    }
+
+  }
 
