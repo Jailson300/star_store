@@ -12,6 +12,26 @@ header{
     align-items: center;
 }
 
+.user-info {
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+.user-info input {
+	padding: 0.5rem 1rem;
+	border: none;
+}
+
+.user-info-id {
+	width: 10rem;
+}
+
+.user-info-zone {
+	width: 5rem;
+}
+
 .head2{
     display: flex;
     list-style: none;
@@ -53,6 +73,8 @@ header{
     width: 200px;
     max-width: 30%;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 .card img{
     width: 100%;
