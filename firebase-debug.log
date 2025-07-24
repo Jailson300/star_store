@@ -1,0 +1,516 @@
+[debug] [2025-07-24T18:49:21.602Z] ----------------------------------------------------------------------
+[debug] [2025-07-24T18:49:21.604Z] Command:       /home/autumn/.nvm/versions/node/v22.13.0/bin/node /home/autumn/.nvm/versions/node/v22.13.0/bin/firebase emulators:start --import=./emulator_data --export-on-exit=./emulator_data
+[debug] [2025-07-24T18:49:21.604Z] CLI Version:   14.2.2
+[debug] [2025-07-24T18:49:21.604Z] Platform:      linux
+[debug] [2025-07-24T18:49:21.604Z] Node Version:  v22.13.0
+[debug] [2025-07-24T18:49:21.604Z] Time:          Fri Jul 25 2025 00:19:21 GMT+0530 (India Standard Time)
+[debug] [2025-07-24T18:49:21.604Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-24T18:49:21.606Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-07-24T18:49:21.807Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-24T18:49:21.807Z] > authorizing via signed-in user (wintersunset95@gmail.com)
+[debug] [2025-07-24T18:49:21.845Z] openjdk version "21.0.8" 2025-07-15
+
+[debug] [2025-07-24T18:49:21.845Z] OpenJDK Runtime Environment (build 21.0.8+9)
+OpenJDK 64-Bit Server VM (build 21.0.8+9, mixed mode, sharing)
+
+[debug] [2025-07-24T18:49:21.849Z] Parsed Java major version: 21
+[info] i  emulators: Starting emulators: auth, functions, firestore, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, extensions"}}
+[debug] [2025-07-24T18:49:21.850Z] Checked if tokens are valid: false, expires at: 1753378004315
+[debug] [2025-07-24T18:49:21.850Z] Checked if tokens are valid: false, expires at: 1753378004315
+[debug] [2025-07-24T18:49:21.850Z] > refreshing access token with scopes: []
+[debug] [2025-07-24T18:49:21.851Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-24T18:49:21.851Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-24T18:49:22.397Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-07-24T18:49:22.398Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-24T18:49:22.423Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/winter-f3cb5 [none]
+[debug] [2025-07-24T18:49:23.178Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-07-24T18:49:23.178Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-07-24T18:49:24.937Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/winter-f3cb5 200
+[debug] [2025-07-24T18:49:24.937Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/winter-f3cb5 {"projectNumber":"548025054656","projectId":"winter-f3cb5","lifecycleState":"ACTIVE","name":"Winter","labels":{"firebase":"enabled","generative-language":"enabled"},"createTime":"2024-01-06T13:55:40.510105Z"}
+[debug] [2025-07-24T18:49:24.947Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.948Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.948Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.948Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.948Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-07-24T18:49:24.954Z] [hub] writing locator at /tmp/hub-winter-f3cb5.json
+[debug] [2025-07-24T18:49:24.959Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2025-07-24T18:49:24.960Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.960Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.960Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-24T18:49:24.960Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-07-24T18:49:25.097Z] defaultcredentials: writing to file /home/autumn/.config/firebase/wintersunset95_gmail_com_application_default_credentials.json
+[debug] [2025-07-24T18:49:25.101Z] Setting GAC to /home/autumn/.config/firebase/wintersunset95_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/autumn/.config/firebase/wintersunset95_gmail_com_application_default_credentials.json"}}
+[debug] [2025-07-24T18:49:25.102Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T18:49:25.102Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T18:49:25.103Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/winter-f3cb5/adminSdkConfig [none]
+[debug] [2025-07-24T18:49:26.615Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/winter-f3cb5/adminSdkConfig 200
+[debug] [2025-07-24T18:49:26.615Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/winter-f3cb5/adminSdkConfig {"projectId":"winter-f3cb5","storageBucket":"winter-f3cb5.firebasestorage.app"}
+[info] i  firestore: Importing data from /home/autumn/Apache/star_store/emulator_data/firestore_export/firestore_export.overall_export_metadata {"metadata":{"emulator":{"name":"firestore"},"message":"Importing data from /home/autumn/Apache/star_store/emulator_data/firestore_export/firestore_export.overall_export_metadata"}}
+[debug] [2025-07-24T18:49:26.644Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-07-24T18:49:26.644Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-07-24T18:49:26.644Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/autumn/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","winter-f3cb5","--seed_from_export","/home/autumn/Apache/star_store/emulator_data/firestore_export/firestore_export.overall_export_metadata","--rules","/home/autumn/Apache/star_store/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8080} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/autumn/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"winter-f3cb5\",\"--seed_from_export\",\"/home/autumn/Apache/star_store/emulator_data/firestore_export/firestore_export.overall_export_metadata\",\"--rules\",\"/home/autumn/Apache/star_store/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8080}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2025-07-24T18:49:27.515Z] Jul 25, 2025 12:19:27 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:27 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2025-07-24T18:49:27.534Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2025-07-24T18:49:27.534Z] 127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+If you are running a Firestore in Datastore Mode project, run:
+
+   export DATASTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Note: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"127.0.0.1:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nIf you are running a Firestore in Datastore Mode project, run:\n\n   export DATASTORE_EMULATOR_HOST=127.0.0.1:8080\n\nNote: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-07-24T18:49:32.495Z] Jul 25, 2025 12:19:31 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:31 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[info] i  auth: Importing config from /home/autumn/Apache/star_store/emulator_data/auth_export/config.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing config from /home/autumn/Apache/star_store/emulator_data/auth_export/config.json"}}
+[info] i  auth: Importing accounts from /home/autumn/Apache/star_store/emulator_data/auth_export/accounts.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing accounts from /home/autumn/Apache/star_store/emulator_data/auth_export/accounts.json"}}
+[debug] [2025-07-24T18:49:32.542Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "/home/autumn/Apache/star_store/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/autumn/Apache/star_store/functions\" for Cloud Functions..."}}
+[debug] [2025-07-24T18:49:32.550Z] Validating nodejs source
+[debug] [2025-07-24T18:49:33.929Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts . --fix",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test": "mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "razorpay": "^2.9.6"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/sinon": "^17.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "chai": "^5.2.1",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.4.1",
+    "mocha": "^11.7.1",
+    "sinon": "^21.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2025-07-24T18:49:33.929Z] Building nodejs source
+[debug] [2025-07-24T18:49:33.929Z] Failed to find version of module node: reached end of search path /home/autumn/Apache/star_store/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-07-24T18:49:33.933Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-07-24T18:49:33.945Z] Found firebase-functions binary at '/home/autumn/Apache/star_store/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8149
+
+[debug] [2025-07-24T18:49:34.197Z] Got response from /__/functions.yaml {"endpoints":{"createStarStoreOrder":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"RAZORPAY_KEY_ID"},{"key":"RAZORPAY_KEY_SECRET"}],"labels":{},"callableTrigger":{},"entryPoint":"createStarStoreOrder"},"sendOrderNotification":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"RAZORPAY_KEY_SECRET"},{"key":"TELEGRAM_TOKEN"},{"key":"TELEGRAM_CHAT_ID"}],"labels":{},"callableTrigger":{},"entryPoint":"sendOrderNotification"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"type":"secret","name":"RAZORPAY_KEY_ID"},{"type":"secret","name":"RAZORPAY_KEY_SECRET"},{"type":"secret","name":"TELEGRAM_TOKEN"},{"type":"secret","name":"TELEGRAM_CHAT_ID"}]}
+[debug] [2025-07-24T18:49:38.217Z] defaultcredentials: writing to file /home/autumn/.config/firebase/wintersunset95_gmail_com_application_default_credentials.json
+[debug] [2025-07-24T18:49:38.217Z] Setting GAC to /home/autumn/.config/firebase/wintersunset95_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/autumn/.config/firebase/wintersunset95_gmail_com_application_default_credentials.json"}}
+[info] ✔  functions: Loaded functions definitions from source: createStarStoreOrder, sendOrderNotification. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createStarStoreOrder, sendOrderNotification."}}
+[info] ✔  functions[us-central1-createStarStoreOrder]: http function initialized (http://127.0.0.1:5001/winter-f3cb5/us-central1/createStarStoreOrder). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/winter-f3cb5/us-central1/createStarStoreOrder)."}}
+[info] ✔  functions[us-central1-sendOrderNotification]: http function initialized (http://127.0.0.1:5001/winter-f3cb5/us-central1/sendOrderNotification). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/winter-f3cb5/us-central1/sendOrderNotification)."}}
+[debug] [2025-07-24T18:49:38.222Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI              │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth       │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore  │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions     │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500, 9150
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-07-24T18:49:47.505Z] Jul 25, 2025 12:19:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:49:47.643Z] Jul 25, 2025 12:19:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:49:48.452Z] Jul 25, 2025 12:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:49:48.488Z] Jul 25, 2025 12:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:49:48.526Z] Jul 25, 2025 12:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:50:33.582Z] Jul 25, 2025 12:20:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:20:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:50:48.500Z] Jul 25, 2025 12:20:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:20:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:50:48.510Z] Jul 25, 2025 12:20:48 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:20:48 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-07-24T18:52:59.202Z] Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:52:59.249Z] Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:52:59.280Z] Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:52:59.331Z] Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:22:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:53:03.662Z] Jul 25, 2025 12:23:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:23:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:53:08.236Z] Jul 25, 2025 12:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:53:08.264Z] Jul 25, 2025 12:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:53:08.291Z] Jul 25, 2025 12:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:53:53.320Z] Jul 25, 2025 12:23:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:23:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:54:08.296Z] Jul 25, 2025 12:24:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:24:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T18:54:08.300Z] Jul 25, 2025 12:24:08 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:24:08 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-07-24T19:00:38.904Z] Jul 25, 2025 12:30:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:30:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:00:38.923Z] Jul 25, 2025 12:30:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:30:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:00:38.959Z] Jul 25, 2025 12:30:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:30:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:00:47.105Z] Jul 25, 2025 12:30:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:30:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:00:47.150Z] Jul 25, 2025 12:30:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:30:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:06.974Z] Jul 25, 2025 12:31:06 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:06 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-07-24T19:01:06.984Z] Jul 25, 2025 12:31:06 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:06 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-07-24T19:01:08.817Z] Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:08.883Z] Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:08.955Z] Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:08.979Z] Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:09.838Z] Jul 25, 2025 12:31:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:10.883Z] Jul 25, 2025 12:31:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:12.229Z] Jul 25, 2025 12:31:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:33.487Z] Jul 25, 2025 12:31:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:47.157Z] Jul 25, 2025 12:31:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:01:47.162Z] Jul 25, 2025 12:31:47 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:47 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-07-24T19:01:57.260Z] Jul 25, 2025 12:31:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:31:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:02:42.281Z] Jul 25, 2025 12:32:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:32:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:09.875Z] Jul 25, 2025 12:33:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:27.308Z] Jul 25, 2025 12:33:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:36.994Z] Jul 25, 2025 12:33:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:37.149Z] Jul 25, 2025 12:33:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:37.182Z] Jul 25, 2025 12:33:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:50.397Z] Jul 25, 2025 12:33:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:53.155Z] Jul 25, 2025 12:33:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:53.174Z] Jul 25, 2025 12:33:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:03:53.189Z] Jul 25, 2025 12:33:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:33:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:04:13.873Z] Jul 25, 2025 12:34:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:34:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:04:33.487Z] [work-queue] {"queuedWork":["/winter-f3cb5/us-central1/createStarStoreOrder-2025-07-24T19:04:33.487Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:04:33.487Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/winter-f3cb5/us-central1/createStarStoreOrder-2025-07-24T19:04:33.487Z"],"workRunningCount":1}
+[debug] [2025-07-24T19:04:33.487Z] Accepted request OPTIONS /winter-f3cb5/us-central1/createStarStoreOrder --> us-central1-createStarStoreOrder
+[debug] [2025-07-24T19:04:33.489Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-24T19:04:33.490Z] [functions] Got req.url=/winter-f3cb5/us-central1/createStarStoreOrder, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/winter-f3cb5/us-central1/createStarStoreOrder, mapping to path=/"}}
+[info] i  functions: Trying to access secret RAZORPAY_KEY_ID@latest {"metadata":{"emulator":{"name":"functions"},"message":"Trying to access secret RAZORPAY_KEY_ID@latest"}}
+[debug] [2025-07-24T19:04:33.491Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:04:33.491Z] Checked if tokens are valid: true, expires at: 1753386561398
+[info] i  functions: Trying to access secret RAZORPAY_KEY_SECRET@latest {"metadata":{"emulator":{"name":"functions"},"message":"Trying to access secret RAZORPAY_KEY_SECRET@latest"}}
+[debug] [2025-07-24T19:04:33.492Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:04:33.492Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:04:33.492Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_ID/versions/latest:access [none]
+[debug] [2025-07-24T19:04:33.494Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_SECRET/versions/latest:access [none]
+[debug] [2025-07-24T19:04:34.738Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_SECRET/versions/latest:access 200
+[debug] [2025-07-24T19:04:34.738Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_SECRET/versions/latest:access {"name":"projects/548025054656/secrets/RAZORPAY_KEY_SECRET/versions/1","payload":{"data":"ck5BbVFaaW40TjA5UWRBNE5RbXNUWHRn","dataCrc32c":"3430965287"}}
+[debug] [2025-07-24T19:04:35.400Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_ID/versions/latest:access 200
+[debug] [2025-07-24T19:04:35.400Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_ID/versions/latest:access {"name":"projects/548025054656/secrets/RAZORPAY_KEY_ID/versions/1","payload":{"data":"cnpwX3Rlc3RfQ2xxZHJ3OWNZUzhDRGM=","dataCrc32c":"205174762"}}
+[debug] [2025-07-24T19:04:35.406Z] [worker-pool] addWorker(us-central1-createStarStoreOrder) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-createStarStoreOrder)"}}
+[debug] [2025-07-24T19:04:35.406Z] [worker-pool] Adding worker with key us-central1-createStarStoreOrder, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-createStarStoreOrder, total=1"}}
+[info] >  (node:1345275) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:1345275) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:1345275) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2025-07-24T19:04:35.892Z] [runtime-status] [1345275] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-24T19:04:35.893Z] [runtime-status] [1345275] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:04:35.893Z] [runtime-status] [1345275] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-07-24T19:04:35.893Z] [runtime-status] [1345275] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:04:36.012Z] [runtime-status] [1345275] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-07-24T19:04:36.012Z] [runtime-status] [1345275] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-07-24T19:04:36.013Z] [runtime-status] [1345275] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:04:36.014Z] [runtime-status] [1345275] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-24T19:04:36.015Z] [runtime-status] [1345275] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:04:36.015Z] [runtime-status] [1345275] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-07-24T19:04:36.038Z] [runtime-status] [1345275] Functions runtime initialized. {"cwd":"/home/autumn/Apache/star_store/functions","node_version":"22.13.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Functions runtime initialized. {\"cwd\":\"/home/autumn/Apache/star_store/functions\",\"node_version\":\"22.13.0\"}"}}
+[debug] [2025-07-24T19:04:36.038Z] [runtime-status] [1345275] Listening to port: /tmp/fire_emu_24b3f0147b660fc9.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[runtime-status] [1345275] Listening to port: /tmp/fire_emu_24b3f0147b660fc9.sock"}}
+[debug] [2025-07-24T19:04:36.119Z] [worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: IDLE"}}
+[debug] [2025-07-24T19:04:36.119Z] [worker-pool] submitRequest(triggerId=us-central1-createStarStoreOrder) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-createStarStoreOrder)"}}
+[info] i  functions: Beginning execution of "us-central1-createStarStoreOrder" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Beginning execution of \"us-central1-createStarStoreOrder\""}}
+[debug] [2025-07-24T19:04:36.120Z] [worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: BUSY"}}
+[debug] [2025-07-24T19:04:36.122Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-createStarStoreOrder" in 3.183607ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finished \"us-central1-createStarStoreOrder\" in 3.183607ms"}}
+[debug] [2025-07-24T19:04:36.123Z] [worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: IDLE"}}
+[debug] [2025-07-24T19:04:36.123Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-24T19:04:36.123Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-24T19:04:36.123Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:04:36.125Z] [work-queue] {"queuedWork":["/winter-f3cb5/us-central1/createStarStoreOrder-2025-07-24T19:04:36.125Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:04:36.125Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/winter-f3cb5/us-central1/createStarStoreOrder-2025-07-24T19:04:36.125Z"],"workRunningCount":1}
+[debug] [2025-07-24T19:04:36.125Z] Accepted request POST /winter-f3cb5/us-central1/createStarStoreOrder --> us-central1-createStarStoreOrder
+[debug] [2025-07-24T19:04:36.126Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-24T19:04:36.126Z] [functions] Got req.url=/winter-f3cb5/us-central1/createStarStoreOrder, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/winter-f3cb5/us-central1/createStarStoreOrder, mapping to path=/"}}
+[debug] [2025-07-24T19:04:36.126Z] [worker-pool] submitRequest(triggerId=us-central1-createStarStoreOrder) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-createStarStoreOrder)"}}
+[info] i  functions: Beginning execution of "us-central1-createStarStoreOrder" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Beginning execution of \"us-central1-createStarStoreOrder\""}}
+[debug] [2025-07-24T19:04:36.126Z] [worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[debug] [2025-07-24T19:04:37.170Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-createStarStoreOrder" in 1044.14964ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finished \"us-central1-createStarStoreOrder\" in 1044.14964ms"}}
+[debug] [2025-07-24T19:04:37.171Z] [worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"[worker-us-central1-createStarStoreOrder-c6598663-c4af-49f6-8474-5566d58d5fbf]: IDLE"}}
+[debug] [2025-07-24T19:04:37.171Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-24T19:04:37.171Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createStarStoreOrder"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-24T19:04:37.171Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:04:38.209Z] Jul 25, 2025 12:34:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:34:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:04:53.197Z] Jul 25, 2025 12:34:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:34:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:04:53.202Z] Jul 25, 2025 12:34:53 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:34:53 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-07-24T19:05:00.085Z] Jul 25, 2025 12:35:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:03.513Z] [work-queue] {"queuedWork":["/winter-f3cb5/us-central1/sendOrderNotification-2025-07-24T19:05:03.513Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:05:03.514Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/winter-f3cb5/us-central1/sendOrderNotification-2025-07-24T19:05:03.513Z"],"workRunningCount":1}
+[debug] [2025-07-24T19:05:03.514Z] Accepted request OPTIONS /winter-f3cb5/us-central1/sendOrderNotification --> us-central1-sendOrderNotification
+[debug] [2025-07-24T19:05:03.515Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-24T19:05:03.516Z] [functions] Got req.url=/winter-f3cb5/us-central1/sendOrderNotification, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/winter-f3cb5/us-central1/sendOrderNotification, mapping to path=/"}}
+[info] i  functions: Trying to access secret RAZORPAY_KEY_SECRET@latest {"metadata":{"emulator":{"name":"functions"},"message":"Trying to access secret RAZORPAY_KEY_SECRET@latest"}}
+[debug] [2025-07-24T19:05:03.516Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:05:03.516Z] Checked if tokens are valid: true, expires at: 1753386561398
+[info] i  functions: Trying to access secret TELEGRAM_TOKEN@latest {"metadata":{"emulator":{"name":"functions"},"message":"Trying to access secret TELEGRAM_TOKEN@latest"}}
+[debug] [2025-07-24T19:05:03.516Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:05:03.516Z] Checked if tokens are valid: true, expires at: 1753386561398
+[info] i  functions: Trying to access secret TELEGRAM_CHAT_ID@latest {"metadata":{"emulator":{"name":"functions"},"message":"Trying to access secret TELEGRAM_CHAT_ID@latest"}}
+[debug] [2025-07-24T19:05:03.517Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:05:03.517Z] Checked if tokens are valid: true, expires at: 1753386561398
+[debug] [2025-07-24T19:05:03.517Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_SECRET/versions/latest:access [none]
+[debug] [2025-07-24T19:05:03.518Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/TELEGRAM_TOKEN/versions/latest:access [none]
+[debug] [2025-07-24T19:05:03.518Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/TELEGRAM_CHAT_ID/versions/latest:access [none]
+[debug] [2025-07-24T19:05:04.321Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_SECRET/versions/latest:access 200
+[debug] [2025-07-24T19:05:04.322Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/RAZORPAY_KEY_SECRET/versions/latest:access {"name":"projects/548025054656/secrets/RAZORPAY_KEY_SECRET/versions/1","payload":{"data":"ck5BbVFaaW40TjA5UWRBNE5RbXNUWHRn","dataCrc32c":"3430965287"}}
+[debug] [2025-07-24T19:05:04.323Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/TELEGRAM_TOKEN/versions/latest:access 200
+[debug] [2025-07-24T19:05:04.323Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/TELEGRAM_TOKEN/versions/latest:access {"name":"projects/548025054656/secrets/TELEGRAM_TOKEN/versions/1","payload":{"data":"NzgwODUzMzc4NTpBQUgyRXNVY0ZiUGlLMnV5bURIWE1TVVVlTlRjblNVUDRLQQ==","dataCrc32c":"1646316179"}}
+[debug] [2025-07-24T19:05:04.323Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/TELEGRAM_CHAT_ID/versions/latest:access 200
+[debug] [2025-07-24T19:05:04.324Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/winter-f3cb5/secrets/TELEGRAM_CHAT_ID/versions/latest:access {"name":"projects/548025054656/secrets/TELEGRAM_CHAT_ID/versions/1","payload":{"data":"LTEwMDI4OTkzNjUzMzc=","dataCrc32c":"2760607125"}}
+[debug] [2025-07-24T19:05:04.330Z] [worker-pool] addWorker(us-central1-sendOrderNotification) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-sendOrderNotification)"}}
+[debug] [2025-07-24T19:05:04.331Z] [worker-pool] Adding worker with key us-central1-sendOrderNotification, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-sendOrderNotification, total=1"}}
+[info] >  (node:1345526) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:1345526) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:1345526) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2025-07-24T19:05:04.827Z] [runtime-status] [1345526] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-24T19:05:04.827Z] [runtime-status] [1345526] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:05:04.828Z] [runtime-status] [1345526] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-07-24T19:05:04.828Z] [runtime-status] [1345526] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:05:04.940Z] [runtime-status] [1345526] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-07-24T19:05:04.940Z] [runtime-status] [1345526] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-07-24T19:05:04.940Z] [runtime-status] [1345526] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:05:04.941Z] [runtime-status] [1345526] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-24T19:05:04.942Z] [runtime-status] [1345526] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.4.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.4.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-24T19:05:04.942Z] [runtime-status] [1345526] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/autumn/Apache/star_store/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-07-24T19:05:04.968Z] [runtime-status] [1345526] Functions runtime initialized. {"cwd":"/home/autumn/Apache/star_store/functions","node_version":"22.13.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Functions runtime initialized. {\"cwd\":\"/home/autumn/Apache/star_store/functions\",\"node_version\":\"22.13.0\"}"}}
+[debug] [2025-07-24T19:05:04.968Z] [runtime-status] [1345526] Listening to port: /tmp/fire_emu_fb123972b82e790f.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[runtime-status] [1345526] Listening to port: /tmp/fire_emu_fb123972b82e790f.sock"}}
+[debug] [2025-07-24T19:05:05.046Z] [worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: IDLE"}}
+[debug] [2025-07-24T19:05:05.047Z] [worker-pool] submitRequest(triggerId=us-central1-sendOrderNotification) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-sendOrderNotification)"}}
+[info] i  functions: Beginning execution of "us-central1-sendOrderNotification" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Beginning execution of \"us-central1-sendOrderNotification\""}}
+[debug] [2025-07-24T19:05:05.047Z] [worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: BUSY"}}
+[debug] [2025-07-24T19:05:05.052Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-sendOrderNotification" in 4.633257ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finished \"us-central1-sendOrderNotification\" in 4.633257ms"}}
+[debug] [2025-07-24T19:05:05.052Z] [worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: IDLE"}}
+[debug] [2025-07-24T19:05:05.052Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-24T19:05:05.053Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-24T19:05:05.053Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:05:05.055Z] [work-queue] {"queuedWork":["/winter-f3cb5/us-central1/sendOrderNotification-2025-07-24T19:05:05.055Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:05:05.055Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/winter-f3cb5/us-central1/sendOrderNotification-2025-07-24T19:05:05.055Z"],"workRunningCount":1}
+[debug] [2025-07-24T19:05:05.055Z] Accepted request POST /winter-f3cb5/us-central1/sendOrderNotification --> us-central1-sendOrderNotification
+[debug] [2025-07-24T19:05:05.056Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-24T19:05:05.056Z] [functions] Got req.url=/winter-f3cb5/us-central1/sendOrderNotification, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/winter-f3cb5/us-central1/sendOrderNotification, mapping to path=/"}}
+[debug] [2025-07-24T19:05:05.056Z] [worker-pool] submitRequest(triggerId=us-central1-sendOrderNotification) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-sendOrderNotification)"}}
+[info] i  functions: Beginning execution of "us-central1-sendOrderNotification" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Beginning execution of \"us-central1-sendOrderNotification\""}}
+[debug] [2025-07-24T19:05:05.056Z] [worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  { {"user":"{","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m {"}}
+[info] >    razorpay_payment_id: 'pay_Qx0tq4L7SSu1Og', {"user":"  razorpay_payment_id: 'pay_Qx0tq4L7SSu1Og',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   razorpay_payment_id: 'pay_Qx0tq4L7SSu1Og',"}}
+[info] >    razorpay_order_id: 'order_Qx0tdup4MhhsUZ', {"user":"  razorpay_order_id: 'order_Qx0tdup4MhhsUZ',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   razorpay_order_id: 'order_Qx0tdup4MhhsUZ',"}}
+[info] >    razorpay_signature: '1010747910a33b7c9c7446b80662339cc13fc8faf22a276a55e648c2da35632b', {"user":"  razorpay_signature: '1010747910a33b7c9c7446b80662339cc13fc8faf22a276a55e648c2da35632b',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   razorpay_signature: '1010747910a33b7c9c7446b80662339cc13fc8faf22a276a55e648c2da35632b',"}}
+[info] >    name: 'ᖇᗩᎥᑎ', {"user":"  name: 'ᖇᗩᎥᑎ',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   name: 'ᖇᗩᎥᑎ',"}}
+[info] >    id: '454855763', {"user":"  id: '454855763',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   id: '454855763',"}}
+[info] >    server: '2321', {"user":"  server: '2321',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   server: '2321',"}}
+[info] >    package: 'Diamond 86', {"user":"  package: 'Diamond 86',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   package: 'Diamond 86',"}}
+[info] >    cost: 'Rs. 105' {"user":"  cost: 'Rs. 105'","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m   cost: 'Rs. 105'"}}
+[info] >  } {"user":"}","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"\u001b[90m> \u001b[39m }"}}
+[debug] [2025-07-24T19:05:06.223Z] Jul 25, 2025 12:35:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:06.264Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-sendOrderNotification" in 1207.663229ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finished \"us-central1-sendOrderNotification\" in 1207.663229ms"}}
+[debug] [2025-07-24T19:05:06.264Z] [worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"[worker-us-central1-sendOrderNotification-6116021b-cffb-4b07-ba6d-d22bbb1e2f4a]: IDLE"}}
+[debug] [2025-07-24T19:05:06.264Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-24T19:05:06.264Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-sendOrderNotification"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-24T19:05:06.264Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-24T19:05:33.250Z] Jul 25, 2025 12:35:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:33.271Z] Jul 25, 2025 12:35:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:33.303Z] Jul 25, 2025 12:35:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:52.533Z] Jul 25, 2025 12:35:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.606Z] Jul 25, 2025 12:35:55 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-07-24T19:05:55.664Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.666Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.666Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.727Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.731Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.733Z] Jul 25, 2025 12:35:55 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-07-24T19:05:55.761Z] Jul 25, 2025 12:35:55 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-07-24T19:05:55.899Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.924Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:55.957Z] Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:05:56.004Z] Jul 25, 2025 12:35:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:35:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:06:20.106Z] Jul 25, 2025 12:36:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:36:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:06:33.891Z] Jul 25, 2025 12:36:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:36:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-07-24T19:06:33.896Z] Jul 25, 2025 12:36:33 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:36:33 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-07-24T19:06:42.396Z] Jul 25, 2025 12:36:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 25, 2025 12:36:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STAR STORE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/modals.css">
     <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script></head>
 <body>
     <header>
@@ -19,78 +20,68 @@
         </div>
     </header>
     <main>
-        <div class="section" id="Recommended">
-            <div class="cards1">
-            <div class="user-id">
-			<!-- Make any changes you want to this section, but do not change or remove their id's -->
-			<h2>User ID and Server ID</h2>
-			<span id="result"></span>
-			<div class="user-info">
-				<input id="userId" placeholder="User ID" type="text" class="user-info-id" />
-				<input id="userZn" placeholder="Server" type="text" class="user-info-zone" />
-				<button id="checkButton">Check</button>
+		<div class="cards1">
+			<div class="user-id">
+				<!-- Make any changes you want to this section, but do not change or remove their id's -->
+				<h2>User ID and Server ID</h2>
+				<span id="result"></span>
+				<div class="user-info">
+						<input id="userId" placeholder="User ID" type="text" class="user-info-id" />
+						<input id="userZn" placeholder="Server" type="text" class="user-info-zone" />
+					<button id="checkButton">Check</button>
+				</div>
+				<!-- End of section -->
+			 </div>
+		</div>
+
+		<div class="order-tracking">
+			<h2>Track Order</h2>
+			<div class="input-area">
+				<input id="order-id-input" placeholder="Order ID" type="text" />
+				<button id="track-button">Track</button>
 			</div>
-			<!-- End of section -->
-             </div>
-            </div>
+			<span id="order-status"></span>
+		</div>
 
-            <h2>Recommended Deals</h2>
-			<!-- Warning: Removing h4 from the cards will break the code 
-			from ./js/razorpay.js - card event listener section -->
-            <div class="cards">
-                <div class="card cardReady">
-                    <img src="Recommended.png">
-                    <h4 >Rs. 65</h4>
-                    <p>Diamond 50+5</p>
-                </div>
-                <div class="card cardReady">
-                    <img src="Recommended.png">
-                    <h4>Rs. 190</h4>
-                    <p>Diamond 150+15</p>
-                </div>
-                <div class="card cardReady">
-                    <img src="Recommended.png">
-                    <h4>Rs. 310</h4>
-                    <p>Diamond 250+25</p>
-                </div>
-                <div class="card cardReady">
-                    <img src="Recommended.png">
-                    <h4>Rs. 630</h4>
-                    <p>Diamond 500+65</p>
-                </div>
-                <div class="card">
-                    <img src="Recommended.png">
-                    <h4>Price</h4>
-                    <p>Description</p>
-                </div>
+		<h2>Recommended Deals</h2>
+		<div class="cards" id="cards">
+		</div>
 
-                <div class="card">
-                    <img src="Recommended.png">
-                    <h4>Price</h4>
-                    <p>Description</p>
-                </div>
-                <div class="card">
-                    <img src="Recommended.png">
-                    <h4>Price</h4>
-                    <p>Description</p>
-                </div>
-                <div class="card">
-                    <img src="Recommended.png">
-                    <h4>Price</h4>
-                    <p>Description</p>
-                </div>
-                <div class="card">
-                    <img src="Recommended.png">
-                    <h4>Price</h4>
-                    <p>Description</p>
-                </div>
-                <div class="card">
-                    <img src="Recommended.png">
-                    <h4>Price</h4>
-                    <p>Description</p>
-                </div>
-            </div>
-          </div>
+
+		<div id="create-order-loading-modal">
+			<div class="spinner"></div>
+		</div>
+
+		<div id="success-modal">
+			<div class="success-container">
+				<h2>Successfully placed an order!</h2>
+				<p id="order-details">Rs. 4400 for 3400 Diamonds</p>
+				<!-- A piece of "code" element with a copy button -->
+				<div class="clipboarder">
+					<span>Order ID: </span>
+					<input id="order-id" type="text" readonly value="helloothere" />
+					<button id="copy-button">Copy</button>
+				</div>
+
+				<div class="warning">
+					<div class="warning-signs">
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						<h3>IMPORTANT</h3>
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						<i class="fa-solid fa-triangle-exclamation"></i>
+					</div>
+					<p>
+					Loss of Order ID will result in NON REFUNDABLE cancellation!! <br />
+					KEEP IT SAFE!<br/>
+					Please do not share your Order ID with anyone!!
+					</p>
+				</div>
+
+				<button id="close-modal">Close</button>
+			</div>
+		</div>
+
     </main>
     <footer>
 

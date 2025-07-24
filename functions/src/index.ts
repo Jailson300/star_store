@@ -10,6 +10,8 @@
 // import {onRequest} from "firebase-functions/v2/https";
 // import * as logger from "firebase-functions/logger";
 
+import { initializeApp } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 import { onCall } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
 import axios from "axios";
@@ -20,6 +22,8 @@ const keyId = defineSecret("RAZORPAY_KEY_ID");
 const keySecret = defineSecret("RAZORPAY_KEY_SECRET");
 const botToken = defineSecret("TELEGRAM_TOKEN");
 const chatId = defineSecret("TELEGRAM_CHAT_ID");
+initializeApp()
+const db = getFirestore();
 
 export const createStarStoreOrder = onCall({
 	cors: ["http://localhost", "https://jailson300.github.io", "https://star-store.web.app", "*"],
@@ -54,8 +58,7 @@ export const createStarStoreOrder = onCall({
 export const sendOrderNotification = onCall({
 	cors: ["http://localhost", "https://jailson300.github.io", "https://star-store.web.app", "*"],
 	secrets: [keySecret, botToken, chatId],
-}, (request) => {
-
+}, async (request) => {
 	console.log(request.data);
 	if (!keySecret || !botToken || !chatId) {
 		console.error("Missing environment variables");
@@ -89,32 +92,64 @@ export const sendOrderNotification = onCall({
 	*New Order Placed!* 🔥
 
 	*Order Details:*
-		- Order ID: \`${orderId}\`
-	- Payment ID: \`${paymentId}\`
+			- Order ID: \`${orderId}\`
+			- Payment ID: \`${paymentId}\`
 
 	*User Details:*
-		- Name: ${name}
-	- User ID: \`${userId}\`
-	- Server: \`${server}\`
+			- Name: ${name}
+			- User ID: \`${userId}\`
+			- Server: \`${server}\`
 
 	*Package Details:*
-		- Package: ${packageName}
-	- Cost: ${cost}
+			- Package: ${packageName}
+			- Cost: ${cost}
 	`;
 
+
 	try {
-		axios.post(url, {
+		const response = await axios.post(url, {
 			chat_id: chatId.value(),
 			text: message,
 			parse_mode: "Markdown",
-		}).then((response) => {
-			console.log("Message sent successfully:", response.data);
+		})
+		const resData = await response.data;
+		if (!resData.ok) {
+			console.error("Error sending message:", resData.description);
 			return {
-				success: true,
-				message: "Payment verified successfully",
+				success: false,
+				message: "Payment verified successfully, but unable to notify the administrators",
 				order_id: request.data.razorpay_order_id,
 			};
-		});
+		}
+
+		// Add to cloud firestore
+		const data = {
+			order_id: request.data.razorpay_order_id,
+			payment_id: request.data.razorpay_payment_id,
+			name: request.data.name,
+			id: request.data.id,
+			server: request.data.server,
+			package: request.data.package,
+			cost: request.data.cost,
+			status: "pending",
+		}
+
+		const firestoreRes = await db.collection("tenants").doc("star-store").collection("orders").doc(request.data.razorpay_order_id).set(data);
+		if (!firestoreRes) {
+			console.error("Error adding to firestore:", firestoreRes);
+			return {
+				success: false,
+				message: "Payment verified successfully, but unable to add to firestore",
+				order_id: request.data.razorpay_order_id,
+			};
+		}
+
+		return {
+			success: true,
+			message: "Payment verified successfully",
+			...data
+		};
+
 	} catch (error) {
 		console.error("Error sending message:", error);
 		return {

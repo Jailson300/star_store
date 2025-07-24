@@ -7,4 +7,5 @@ _site/
 vendor/
 
 functions/node_modules/
+emulator_data/
 

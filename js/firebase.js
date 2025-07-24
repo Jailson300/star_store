@@ -22,10 +22,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const functions = getFunctions(getApp());
-const db = getFirestore(app);
+export const functions = getFunctions(getApp());
+export const db = getFirestore(app);
 getAuth(app).tenantId = "star-store"
 
 // Emulators section
