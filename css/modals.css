@@ -1,0 +1,114 @@
+#create-order-loading-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes spin {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+#create-order-loading-modal .spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 10rem;
+	height: 10rem;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	animation: spin 3s linear infinite;
+}
+
+#success-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.success-container {
+	background-color: #fff;
+	padding: 0.5rem;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.success-container * {
+	margin: 0;
+}
+
+.success-container input {
+	border: 0;
+	background: transparent;
+	padding: 0.5rem;
+	flex-grow: 1;
+	color: white;
+}
+
+.success-container button {
+	background-color: #0073e6;
+	color: #fff;
+	border: 0;
+	padding: 0.5rem;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.clipboarder {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	background: #252525;
+	padding: 0.25rem;
+	border-radius: 5px;
+	flex: 1;
+	color: white;
+}
+
+.clipboarder span {
+	padding: 0.5rem;
+}
+
+.warning {
+	display: flex;
+	flex-direction: column;
+	background-color: #a8a8a8;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.warning-signs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: red;
+	padding: 0.5rem;
+	font-weight: bold;
+}
+
+.warning p {
+	padding: 0.5rem;
+}
