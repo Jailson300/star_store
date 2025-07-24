@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR STORE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="head1"><img src="star_logo.jpeg" alt="error" height="80px"></div>
+        <div class="head2">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+        </div>
+        <div class="head3">
+            <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+        </div>
+    </header>
+
+    <main>
+         <div class="cards1">
+        <div class="contact-container">
+            <form class="contact-form">
+                 <h2>CONTACT US</h2>
+                <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name (e.g. John Doe)" required>
+                </div>
+                 <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email (e.g.johndoe@gmail.com)" required>
+                </div>
+                <div class="input-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="input-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Write your message..." required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+
+    <footer>
+
+        <div class="foot-panel1">
+            <div class="panel1-content"><h2>See personalized recommendations</h2></div>
+            <div class="panel1-content"><button class="btn">Sign in</button></div>
+            <div class="panel1-content"><p>New customer? <a href="#">Start here</a></p></div>
+        </div>
+
+        <div class="foot-panel2">
+           <a href="#top">Back to top</a>
+        </div>
+
+        <div class="foot-panel3">
+            <div class="foot-desc">
+                <h3>Get To Know Us</h3>
+                <p><a>About Us</a></p>
+                <p><a>Our Team</a></p>
+                <p><a>Our Policies</a></p>
+            </div>
+            <div class="foot-desc">
+                <h3>Connect with Us</h3>
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="foot-desc">
+                <h3>Developed & Managed by</h3>
+                <p>CODENEST Digital solutions pvt.ltd</p>
+            </div>
+            <div class="foot-desc">
+                <h3>Our Guarantees</h3>
+                <p><a>100% Safe and Secure</a></p>
+                <p><a>Fast Transcations</a></p>
+                <p> <a>Refund Policy</a></p>
+                <p><a>100% Purchase Protection</a></p>
+                <p><a>Help</a></p>
+            </div>
+        </div>
+
+        <div class="foot-panel5">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 2025 StarStore
+            </div>
+        </div>
+        
+    </footer>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script type="module" src="./js/firebase.js"></script>
+
+	<!-- All other scripts can go here -->
+	<script type="module" src="./js/script.js"></script>
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	<script type="module" src="./js/razorpay.js"></script>
+</body>
+</body>
+</html>
