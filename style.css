@@ -25,6 +25,24 @@ main {
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 	display: flex;
+    justify-content: center;
+}
+
+.cards2 {
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	display: flex;
+    justify-content: center;
+}
+
+.card1{
+    width: 80%;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
 .user-id{
@@ -242,12 +260,6 @@ footer{
     align-items: center;
 }
 
-.logo {
-    background-image: url("amazon_logo.JPG");
-    background-size: cover;
-    height: 50px;
-    width: 100px;
-}
 
 .foot-panel5{
     background-color: #0f1111;
