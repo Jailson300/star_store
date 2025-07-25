@@ -53,32 +53,35 @@
 		</div>
 
 		<div id="success-modal">
-			<div class="success-container">
-				<h2>Successfully placed an order!</h2>
-				<p id="order-details">Rs. 4400 for 3400 Diamonds</p>
-				<!-- A piece of "code" element with a copy button -->
-				<div class="clipboarder">
-					<span>Order ID: </span>
-					<input id="order-id" type="text" readonly value="helloothere" />
-					<button id="copy-button">Copy</button>
-				</div>
-
-				<div class="warning">
-					<div class="warning-signs">
-						<i class="fa-solid fa-triangle-exclamation"></i>
-						<i class="fa-solid fa-triangle-exclamation"></i>
-						<h3>IMPORTANT</h3>
-						<i class="fa-solid fa-triangle-exclamation"></i>
-						<i class="fa-solid fa-triangle-exclamation"></i>
+			<div>
+				<div class="success-container">
+					<h2>Payment verified, but not added to the database. Please copy your order ID and contact the administrators immediately!</h2>
+					<p id="order-details">Rs. 4400 for 3400 Diamonds</p>
+					<!-- A piece of "code" element with a copy button -->
+					<div class="clipboarder">
+						<span>Order ID: </span>
+						<input id="order-id" type="text" readonly value="helloothere" />
+						<button id="copy-button">Copy</button>
 					</div>
-					<p>
-					Loss of Order ID will result in NON REFUNDABLE cancellation!! <br />
-					KEEP IT SAFE!<br/>
-					Please do not share your Order ID with anyone!!
-					</p>
-				</div>
 
-				<button id="close-modal">Close</button>
+					<div class="warning">
+						<div class="warning-signs">
+							<i class="fa-solid fa-triangle-exclamation"></i>
+							<i class="fa-solid fa-triangle-exclamation"></i>
+							<h3>IMPORTANT</h3>
+							<i class="fa-solid fa-triangle-exclamation"></i>
+							<i class="fa-solid fa-triangle-exclamation"></i>
+						</div>
+						<p>
+						Copying the order ID to clipboard will allow you to track your order.
+						<br><br>
+							Loosing your order ID will result in NON REFUNDABLE and UNRECOVERABLE loss of your order.
+							There is NOTHING we can do to help you.
+						</p>
+					</div>
+
+					<button id="close-modal">Close</button>
+				</div>
 			</div>
 		</div>
 

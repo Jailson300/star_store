@@ -74,7 +74,7 @@ export const sendOrderNotification = onCall({
 		console.log("Payment verification failed");
 		return {
 			success: false,
-			message: "Payment verification failed",
+			message: "Payment verification failed! Please copy your order ID and contact the administrators immediately!",
 			order_id: request.data.razorpay_order_id,
 		};
 	}
@@ -89,20 +89,20 @@ export const sendOrderNotification = onCall({
 	const cost = (request.data.cost);
 
 	const message = `
-	*New Order Placed!* 🔥
+*New Order Placed!* 🔥
 
-	*Order Details:*
-			- Order ID: \`${orderId}\`
-			- Payment ID: \`${paymentId}\`
+*Order Details:*
+		- Order ID: \`${orderId}\`
+		- Payment ID: \`${paymentId}\`
 
-	*User Details:*
-			- Name: ${name}
-			- User ID: \`${userId}\`
-			- Server: \`${server}\`
+*User Details:*
+		- Name: ${name}
+		- User ID: \`${userId}\`
+		- Server: \`${server}\`
 
-	*Package Details:*
-			- Package: ${packageName}
-			- Cost: ${cost}
+*Package Details:*
+		- Package: ${packageName}
+		- Cost: ${cost}
 	`;
 
 	try {
@@ -122,8 +122,8 @@ export const sendOrderNotification = onCall({
 		if (!firestoreRes) {
 			console.error("Error adding to firestore:", firestoreRes);
 			return {
-				success: false,
-				message: "Payment verified successfully, but unable to add to firestore",
+				success: true,
+				message: "Payment verified, but not added to the database. Please copy your order ID and contact the administrators immediately!",
 				order_id: request.data.razorpay_order_id,
 			};
 		}
@@ -146,15 +146,15 @@ export const sendOrderNotification = onCall({
 		if (!resData.ok) {
 			console.error("Error sending message:", resData.description);
 			return {
-				success: false,
-				message: "Payment verified successfully, but unable to notify the administrators",
+				success: true,
+				message: "Payment verified, but unable to notify the administrators. Please copy your order ID and contact them immediately!",
 				order_id: request.data.razorpay_order_id,
 			};
 		}
 
 		return {
 			success: true,
-			message: "Payment verified successfully",
+			message: "Payment verified!! Copy the order ID",
 			...data
 		};
 
@@ -223,20 +223,20 @@ export const recieveTelegramCallback = onRequest({
 	const packageName = firestoreData.package;
 	const cost = firestoreData.cost;
 	const message = `
-	*New Order Placed!* 🔥
+*New Order Placed!* 🔥
 
-	*Order Details:*
-			- Order ID: \`${orderId}\`
-			- Payment ID: \`${paymentId}\`
+*Order Details:*
+		- Order ID: \`${orderId}\`
+		- Payment ID: \`${paymentId}\`
 
-	*User Details:*
-			- Name: ${name}
-			- User ID: \`${userId}\`
-			- Server: \`${server}\`
+*User Details:*
+		- Name: ${name}
+		- User ID: \`${userId}\`
+		- Server: \`${server}\`
 
-	*Package Details:*
-			- Package: ${packageName}
-			- Cost: ${cost}
+*Package Details:*
+		- Package: ${packageName}
+		- Cost: ${cost}
 	`;
 
 

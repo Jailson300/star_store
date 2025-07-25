@@ -100,6 +100,7 @@ cards.forEach(card => {
 			if (result.data.id) {
 				options.order_id = result.data.id
 				options.handler = (response) => {
+					loadingModal.style.display = "flex"
 					const sendOrderNotification = httpsCallable(functions, 'sendOrderNotification');
 					const detailsForServer = {
 						...response,
@@ -113,8 +114,10 @@ cards.forEach(card => {
 					sendOrderNotification(detailsForServer).then((result) => {
 						console.log(result)
 						const details = `${result.data.cost} for ${result.data.package}`
-						successModalFunc(details, result.data.order_id);
+						loadingModal.style.display = "none"
+						successModalFunc(result.data.message, details, result.data.order_id);
 					}).catch((error) => {
+						loadingModal.style.display = "none"
 						console.log(error)
 					})
 				}

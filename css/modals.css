@@ -41,9 +41,14 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 9999;
-	display: none;
+	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+#success-modal > div {
+	padding: 1rem;
+	max-width: 40rem;
 }
 
 .success-container {
