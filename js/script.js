@@ -123,8 +123,10 @@ const orderResultHolder = document.querySelector("#order-status")
 closeModalBtn.addEventListener("click", () => {
 	successModal.style.display = "none"
 })
-export const successModalFunc = (details, order_id) => {
+
+export const successModalFunc = (message, details, order_id) => {
 	successModal.style.display = "flex"
+	successModal.querySelector("h2").textContent = message
 	orderDetails.innerHTML = details
 	orderId.value = order_id
 	orderIdInput.value = order_id
@@ -138,6 +140,8 @@ orderStatusBtn.addEventListener("click", () => {
 	// Get data from firestore
 	// tenants->star-store->orders->order_id
 	// order_id is in orderIdInput
+	orderStatusBtn.disabled = true
+	orderStatusBtn.innerHTML = "Checking..."
 	const order_id = orderIdInput.value
 	console.log(order_id)
 	const ordersColl = collection(db, "tenants", "star-store", "orders")
@@ -157,7 +161,11 @@ orderStatusBtn.addEventListener("click", () => {
 		} else {
 			console.log("No such document!")
 		}
+		orderStatusBtn.disabled = false
+		orderStatusBtn.innerHTML = "Track"
 	}).catch((error) => {
 		console.log(error)
+		orderStatusBtn.disabled = false
+		orderStatusBtn.innerHTML = "Track"
 	})
 })

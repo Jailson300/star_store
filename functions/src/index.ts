@@ -12,7 +12,7 @@
 
 import { initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { onCall } from "firebase-functions/v2/https";
+import { CallableRequest, onCall, onRequest } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
 import axios from "axios";
 import Razorpay from "razorpay";
@@ -58,7 +58,7 @@ export const createStarStoreOrder = onCall({
 export const sendOrderNotification = onCall({
 	cors: ["http://localhost", "https://jailson300.github.io", "https://star-store.web.app", "*"],
 	secrets: [keySecret, botToken, chatId],
-}, async (request) => {
+}, async (request: CallableRequest<any>) => {
 	console.log(request.data);
 	if (!keySecret || !botToken || !chatId) {
 		console.error("Missing environment variables");
@@ -74,7 +74,7 @@ export const sendOrderNotification = onCall({
 		console.log("Payment verification failed");
 		return {
 			success: false,
-			message: "Payment verification failed",
+			message: "Payment verification failed! Please copy your order ID and contact the administrators immediately!",
 			order_id: request.data.razorpay_order_id,
 		};
 	}
@@ -89,40 +89,24 @@ export const sendOrderNotification = onCall({
 	const cost = (request.data.cost);
 
 	const message = `
-	*New Order Placed!* 🔥
+*New Order Placed!* 🔥
 
-	*Order Details:*
-			- Order ID: \`${orderId}\`
-			- Payment ID: \`${paymentId}\`
+*Order Details:*
+		- Order ID: \`${orderId}\`
+		- Payment ID: \`${paymentId}\`
 
-	*User Details:*
-			- Name: ${name}
-			- User ID: \`${userId}\`
-			- Server: \`${server}\`
+*User Details:*
+		- Name: ${name}
+		- User ID: \`${userId}\`
+		- Server: \`${server}\`
 
-	*Package Details:*
-			- Package: ${packageName}
-			- Cost: ${cost}
+*Package Details:*
+		- Package: ${packageName}
+		- Cost: ${cost}
 	`;
 
-
 	try {
-		const response = await axios.post(url, {
-			chat_id: chatId.value(),
-			text: message,
-			parse_mode: "Markdown",
-		})
-		const resData = await response.data;
-		if (!resData.ok) {
-			console.error("Error sending message:", resData.description);
-			return {
-				success: false,
-				message: "Payment verified successfully, but unable to notify the administrators",
-				order_id: request.data.razorpay_order_id,
-			};
-		}
-
-		// Add to cloud firestore
+		// First add to cloud firestore
 		const data = {
 			order_id: request.data.razorpay_order_id,
 			payment_id: request.data.razorpay_payment_id,
@@ -138,15 +122,39 @@ export const sendOrderNotification = onCall({
 		if (!firestoreRes) {
 			console.error("Error adding to firestore:", firestoreRes);
 			return {
-				success: false,
-				message: "Payment verified successfully, but unable to add to firestore",
+				success: true,
+				message: "Payment verified, but not added to the database. Please copy your order ID and contact the administrators immediately!",
+				order_id: request.data.razorpay_order_id,
+			};
+		}
+
+		const response = await axios.post(url, {
+			chat_id: chatId.value(),
+			text: message,
+			parse_mode: "Markdown",
+			reply_markup: {
+				inline_keyboard: [
+					[
+						{ text: "✅ Done", callback_data: `confirm-${orderId}` },
+						{ text: "❌ Reject", callback_data: `reject-${orderId}` },
+					]
+				]
+			}
+		})
+
+		const resData = await response.data;
+		if (!resData.ok) {
+			console.error("Error sending message:", resData.description);
+			return {
+				success: true,
+				message: "Payment verified, but unable to notify the administrators. Please copy your order ID and contact them immediately!",
 				order_id: request.data.razorpay_order_id,
 			};
 		}
 
 		return {
 			success: true,
-			message: "Payment verified successfully",
+			message: "Payment verified!! Copy the order ID",
 			...data
 		};
 
@@ -158,8 +166,126 @@ export const sendOrderNotification = onCall({
 			order_id: request.data.razorpay_order_id,
 		};
 	}
+})
 
-	return;
+export const recieveTelegramCallback = onRequest({
+	cors: ["http://localhost", "https://jailson300.github.io", "https://star-store.web.app", "*"],
+	secrets: [botToken, chatId],
+}, async (req, res) => {
+	if (!botToken || !chatId) {
+		console.error("Missing environment variables");
+		res.status(200).send("Missing environment variables");
+		return;
+	}
+
+	if (!req.body) {
+		console.error("Missing request body");
+		res.status(200).send("Missing request body");
+		return;
+	}
+
+	const data = req.body;
+	if (!data.callback_query) {
+		console.error("Not a callback query");
+		res.status(200).send("Not a callback query");
+		return;
+	}
+	const recievedInfo = data.callback_query.data;
+	if (!data.callback_query.message) {
+		console.error("Missing message id");
+		res.status(200).send("Missing message id");
+		return;
+	}
+	const messageId = data.callback_query.message.message_id;
+	const confirmOrReject = recievedInfo.split("-")[0];
+	const orderId = recievedInfo.split("-")[1];
+
+	// Get the firestore document in order to craft a proper response
+	const docRef = db.collection("tenants").doc("star-store").collection("orders").doc(orderId);
+	const docSnap = await docRef.get();
+	if (!docSnap.exists) {
+		console.error("No such document!");
+		res.status(200).send("OK");
+		return;
+	}
+
+	const firestoreData = docSnap.data();
+	if (!firestoreData) {
+		console.error("No such document!");
+		res.status(200).send("OK");
+		return;
+	}
+
+	const paymentId = firestoreData.payment_id;
+	const name = firestoreData.name;
+	const userId = firestoreData.id;
+	const server = firestoreData.server;
+	const packageName = firestoreData.package;
+	const cost = firestoreData.cost;
+	const message = `
+*New Order Placed!* 🔥
+
+*Order Details:*
+		- Order ID: \`${orderId}\`
+		- Payment ID: \`${paymentId}\`
+
+*User Details:*
+		- Name: ${name}
+		- User ID: \`${userId}\`
+		- Server: \`${server}\`
+
+*Package Details:*
+		- Package: ${packageName}
+		- Cost: ${cost}
+	`;
+
+
+	if (confirmOrReject == "confirm") {
+		db.collection("tenants").doc("star-store").collection("orders").doc(orderId).update({
+			status: "done"
+		}).then(() => {
+			const updateTextUrl = `https://api.telegram.org/bot${botToken.value()}/editMessageText`;
+			const messageToSend = message.replace("*New Order Placed!* 🔥", "*Order Delivered!* 🔥");
+			axios.post(updateTextUrl, {
+				chat_id: chatId.value(),
+				message_id: messageId,
+				text: messageToSend,
+				parse_mode: "Markdown",
+			})
+		})
+	} else if (confirmOrReject == "reject") {
+		db.collection("tenants").doc("star-store").collection("orders").doc(orderId).update({
+			status: "rejected"
+		}).then(() => {
+			const updateTextUrl = `https://api.telegram.org/bot${botToken.value()}/editMessageText`;
+			const messageToSend = message.replace("*New Order Placed!* 🔥", "*Order Rejected*");
+			axios.post(updateTextUrl, {
+				chat_id: chatId.value(),
+				message_id: messageId,
+				text: messageToSend,
+				parse_mode: "Markdown",
+			})
+		})
+	} else {
+		res.status(200).send("OK");
+	}
+
+	// return a valid response http 200
+	res.status(200).send("OK");
+})
+
+export const telegramWebhookForwarder = onRequest({
+	cors: ["http://localhost", "https://jailson300.github.io", "https://star-store.web.app", "*"],
+}, async (req, res) => {
+	const prodUrl = "https://us-central1-winter-f3cb5.cloudfunctions.net/recieveTelegramCallback";
+	const devUrl = "https://aware-thoroughly-goldfish.ngrok-free.app/winter-f3cb5/us-central1/recieveTelegramCallback";
+
+	const prodPromise = await axios.post(prodUrl, req.body);
+	const devPromise = await axios.post(devUrl, req.body);
+
+	Promise.allSettled([prodPromise, devPromise])
+
+	res.status(200).send("OK");
 })
 
 // Start writing functions
