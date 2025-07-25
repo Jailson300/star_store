@@ -109,6 +109,7 @@ cards.forEach(card => {
 						package: card.querySelector('p').textContent,
 						cost: card.querySelector('h4').textContent
 					}
+					console.log(detailsForServer);
 					sendOrderNotification(detailsForServer).then((result) => {
 						console.log(result)
 						const details = `${result.data.cost} for ${result.data.package}`
