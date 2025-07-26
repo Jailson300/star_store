@@ -46,7 +46,77 @@
 		<h2>Recommended Deals</h2>
 		<div class="cards" id="cards">
 		</div>
+        
+        <section class="product-slider-section">
+            <h2>Featured Products</h2>
+            <div class="slider-wrapper">
+              <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+              
+              <div class="product-slider" id="productSlider">
+                <div class="product-track" id="productTrack">
 
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 1" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 2" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 3" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 4" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 1" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 2" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+        
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 3" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+        
+                  <div class="product-card">
+                    <img src="Recommended.png" alt="Product 4" />
+                    <h3>Product</h3>
+                    <p>Price</p>
+                    <button>Add to Cart</button>
+                  </div>
+        
+                </div>
+              </div>
+        
+              <button class="slider-btn next" onclick="nextSlide()">❯</button>
+            </div>
+          </section>
 
 		<div id="create-order-loading-modal">
 			<div class="spinner"></div>
@@ -147,5 +217,24 @@
 	<script type="module" src="./js/script.js"></script>
 	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 	<script type="module" src="./js/razorpay.js"></script>
+    <script>/*slider*/
+        const track = document.getElementById('productTrack');
+        const cardWidth = 270; // card + margin
+        let currentPosition = 0;
+        
+        function nextSlide() {
+          const maxScroll = track.scrollWidth - document.getElementById('productSlider').offsetWidth;
+          if (currentPosition + cardWidth <= maxScroll) {
+            currentPosition += cardWidth;
+            track.style.transform = `translateX(-${currentPosition}px)`;
+          }
+        }
+        
+        function prevSlide() {
+          if (currentPosition - cardWidth >= 0) {
+            currentPosition -= cardWidth;
+            track.style.transform = `translateX(-${currentPosition}px)`;
+          }
+        }</script>
 </body>
 </html>

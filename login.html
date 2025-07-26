@@ -1,20 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sign In</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login/Sign-Up Page</title>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Reset & Global Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f6f5f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: -20px 0 50px;
+        }
+
+        /* --- Main Container --- */
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+                        0 10px 10px rgba(0, 0, 0, 0.22);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+
+        /* --- Form Containers (Sign Up & Sign In) --- */
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* --- Form Styling --- */
+        form {
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 20px 0 30px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        button {
+            border-radius: 20px;
+            border: 1px solid #ff4b2b;
+            background-color: #ff4b2b;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button.ghost {
+            background-color: transparent;
+            border-color: #ffffff;
+        }
+
+        /* --- Social Login Icons --- */
+        .social-container {
+            margin: 20px 0;
+        }
+
+        .social-container a {
+            border: 1px solid #dddddd;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+            transition: all 0.3s ease;
+        }
+        .social-container a:hover {
+            background-color: #ff4b2b;
+            color: white;
+            border-color: #ff4b2b;
+        }
+
+        /* --- Overlay Container & Panels --- */
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 100;
+        }
+
+        .overlay {
+            background: #ff416c;
+            background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #ffffff;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        /* --- Animation Classes --- */
+        /* Move sign-in to the right */
+        .container.right-panel-active .sign-in-container {
+            transform: translateX(100%);
+        }
+
+        /* Move overlay to the left */
+        .container.right-panel-active .overlay-container {
+            transform: translateX(-100%);
+        }
+
+        /* Bring sign-up over */
+        .container.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        /* Move overlay back to the right */
+        .container.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .container.right-panel-active .overlay-left {
+            transform: translateX(0);
+        }
+
+        .container.right-panel-active .overlay-right {
+            transform: translateX(20%);
+        }
+
+        @keyframes show {
+            0%, 49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+            50%, 100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                max-width: 450px; /* Adjust for smaller screens */
+            }
+            .form-container {
+                width: 100%;
+            }
+            .overlay-container {
+                display: none; /* Hide overlay on mobile for simplicity */
+            }
+            .sign-in-container, .sign-up-container {
+                position: relative;
+                opacity: 1;
+                z-index: 1;
+            }
+            .container.right-panel-active .sign-up-container {
+                 transform: translateX(0);
+            }
+            .container.right-panel-active .sign-in-container {
+                 transform: translateX(0);
+            }
+            /* A simple approach for mobile: stack the forms */
+            .sign-up-container {
+                display: none; /* Hide sign up by default */
+            }
+             /* We will use JS to toggle display */
+        }
+        
+    </style>
 </head>
 <body>
-  <form action="index.html" method="get">
-    <h2>Sign In</h2>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" required pattern=".{3,}" title="At least 3 characters">
 
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required pattern=".{6,}" title="At least 6 characters">
+    <div class="container" id="container">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
+        </div>
 
-    <input type="submit" value="Sign In">
-  </form>
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+
+        <!-- Overlay with Panels -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <!-- Left Overlay Panel -->
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <!-- Right Overlay Panel -->
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        // Check for screen width to apply different logic for mobile
+        if (window.innerWidth > 768) {
+            // --- Desktop Logic ---
+            // Event listener to switch to the "Sign Up" panel
+            signUpButton.addEventListener('click', () => {
+                container.classList.add("right-panel-active");
+            });
+
+            // Event listener to switch back to the "Sign In" panel
+            signInButton.addEventListener('click', () => {
+                container.classList.remove("right-panel-active");
+            });
+        } else {
+            // --- Mobile Logic ---
+            const signUpContainer = document.querySelector('.sign-up-container');
+            const signInContainer = document.querySelector('.sign-in-container');
+
+            // Hide sign-in, show sign-up
+            signUpButton.addEventListener('click', () => {
+                signInContainer.style.display = 'none';
+                signUpContainer.style.display = 'flex';
+            });
+            
+            // Hide sign-up, show sign-in
+            signInButton.addEventListener('click', () => {
+                signInContainer.style.display = 'flex';
+                signUpContainer.style.display = 'none';
+            });
+        }
+
+        // Re-check on resize to switch between mobile and desktop logic if needed
+        window.addEventListener('resize', () => {
+             // This is a simple implementation. For production, you might want a more robust solution
+             // to avoid re-attaching listeners multiple times, but this works for a demo.
+             location.reload(); 
+        });
+
+    </script>
 </body>
 </html>
