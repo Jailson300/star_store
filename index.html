@@ -6,7 +6,18 @@
     <title>STAR STORE</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./css/modals.css">
-    <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script></head>
+    <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
 <body>
     <header>
         <div class="head1"><img src="star_logo.png" alt="error" height="80px"></div>
@@ -18,6 +29,22 @@
         <div class="head3">
             <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
         </div>
+		<button class="header-button">
+			<i class="fa-solid fa-bars"></i>
+		</button>
+		<div class="mobile-menu mobile-menu-hidden">
+			<ul class="mobile-menu-list mobile-menu-list-hidden">
+				<div class="mobile-menu-header">
+					<div><span>Login</span> <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a></div>
+					<button class="header-button">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<li><a href="index.html">Back to homepage</a></li>
+				<li><a href="aboutus.html">Who are we?</a></li>
+				<li><a href="contact.html">Wanna talk to us?</a></li>
+			</ul>
+		</div>
     </header>
     <main>
 		<div class="cards1">
@@ -34,6 +61,14 @@
 			 </div>
 		</div>
 
+		<div class="cards-section">
+			<h2 class="no-pad-heading">Popular Packs</h2>
+			<div class="swiper">
+				<div class="swiper-wrapper" id="cards">
+				</div>
+			</div>
+		</div>
+
 		<div class="order-tracking">
 			<h2>Track Order</h2>
 			<div class="input-area">
@@ -43,10 +78,8 @@
 			<span id="order-status"></span>
 		</div>
 
-		<h2>Recommended Deals</h2>
-		<div class="cards" id="cards">
-		</div>
-        
+
+		<!-- 
         <section class="product-slider-section">
             <h2>Featured Products</h2>
             <div class="slider-wrapper">
@@ -116,7 +149,8 @@
         
               <button class="slider-btn next" onclick="nextSlide()">❯</button>
             </div>
-          </section>
+		</section>
+		-->
 
 		<div id="create-order-loading-modal">
 			<div class="spinner"></div>
@@ -154,7 +188,6 @@
 				</div>
 			</div>
 		</div>
-
     </main>
     <footer>
 
@@ -215,8 +248,11 @@
 
 	<!-- All other scripts can go here -->
 	<script type="module" src="./js/script.js"></script>
+	<script type="module" src="./js/swiper.js"></script>
 	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 	<script type="module" src="./js/razorpay.js"></script>
+
+	<!-- 
     <script>/*slider*/
         const track = document.getElementById('productTrack');
         const cardWidth = 270; // card + margin
@@ -235,6 +271,8 @@
             currentPosition -= cardWidth;
             track.style.transform = `translateX(-${currentPosition}px)`;
           }
-        }</script>
+        }
+	</script>
+	-->
 </body>
 </html>

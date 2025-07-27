@@ -1,21 +1,102 @@
-body{
-    background-color: rgb(226, 226, 226);
-    font-size: 1rem;
-    font-family: sans-serif;
+/* 27-07-25 6:30 am: CSS Reset & Global Styles */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-header{
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #f6f5f7;
+}
+
+/* 27-07-25 6:30 am: Made some changes to header area */
+header {
     background-color: #fff;
     display: flex;
-    justify-content: space-evenly;
+	flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+	padding-right: 2rem;
 }
+
+/* 27-07-25 6:30 am: Menu/Drawer on mobile screen */
+.header-button {
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 2rem;
+}
+
+.mobile-menu-hidden {
+	background-color: transparent;
+	z-index: -999;
+}
+
+.mobile-menu-shown {
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 999;
+}
+
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	backdrop-filter: blur(5px);
+	transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, z-index 0.3s ease-out;
+}
+
+.mobile-menu-list-hidden {
+	transform: translateX(100%);
+}
+
+.mobile-menu-list-shown {
+	transform: translateX(0);
+}
+
+.mobile-menu-list {
+	list-style: none;
+	height: 100%;
+	background-color: #fff;
+	width: 100%;
+	max-width: 20rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: end;
+	gap: 1rem;
+	padding: 1rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu-list a {
+	color: black;
+}
+
+.mobile-menu-list a:hover {
+	color: #a8a8a8;
+}
+
+.mobile-menu-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+/* End of mobile menu section */
 
 main {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	padding: 0.5rem;
 }
 
 .cards1 {
@@ -61,7 +142,6 @@ main {
 	max-width: 50rem;
 	display: flex;
 	justify-content: start;
-	align-items: center;
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
@@ -69,7 +149,15 @@ main {
 .user-info input, .order-tracking input {
     background-color: #cfcbcb;
 	padding: 0.5rem 1rem;
-	border: none;
+	border: 0px solid #cfcbcb;
+	outline: 0px solid #cfcbcb;
+	border-radius: 5px;
+	transition: outline 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.user-info input:focus, .order-tracking input:focus {
+	border: 1px solid #ff4b2b;
+	outline: 1px solid #ff4b2b;
 }
 
 .order-tracking input {
@@ -85,7 +173,8 @@ main {
 }
 
 .user-info button, .order-tracking button {
-	background-color: #282828;
+	background-color: #ff4b2b;
+	border-radius: 5px;
 	color: white;
 	border: none;
 	padding: 10px;
@@ -105,7 +194,6 @@ main {
 .order-tracking .input-area {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	gap: 0.5rem;
 	max-width: 50rem;
 }
@@ -123,7 +211,7 @@ main {
 }
 
 .head2{
-    display: flex;
+    display: none;
     list-style: none;
     justify-content: space-evenly;
 }
@@ -135,39 +223,88 @@ main {
     padding: 10px;
     display: flex;
     text-decoration: none;
-  }
+}
 
+/* 27-07-25 6:53 am: Changed hover color */
 .head2 a:hover{
-    background-color: #a8a8a8;
+    background-color: #ff4b2b;
     color: white;
     border-radius: 5px;
 }
 
-.head3 a{
-    color: black;
-    width: 80px;
-    border-radius: 20px;
+/* 27-07-25 6:53 am: Changed background color */
+.head3 {
+	display: none;
+	background-color: #ff4b2b;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
 }
 
+.head3 a{
+    color: white;
+}
+
+/* 27-07-25 6:30 am: Deprecated, to remove later
+/*
 .cards{
     margin: 0.5rem;
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1rem;
 }
+*/
 
-.card{
-    background-color: #ffffff;
+/* 27-07-25 6:30 am: Slider in the main section */
+.cards-section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0.5rem;
+}
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-container {
+	background: transparent;
+}
+
+.card {
+	width: 100%;
+	background-color: #ffffff;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     padding: 0.5rem;
     border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
+	margin: 20px 0 25px 0;
+	gap: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+}
+
+.bestseller {
+	background-color: #ff4b2b;
+	color: white;
+	padding: 1rem;
+	border-radius: 5px;
+	position: absolute;
+	top: 1rem;
+	left: -3rem;
+	width: 12rem;
+	transform: rotate(-45deg);
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: bold;
+	z-index: 1;
 }
 
 .card .img-container {
 	width: 100%;
-	aspect-ratio: 1/1;
+	aspect-ratio: 5/3;
     border-radius: 8px;
     border: 2px solid grey;
 	display: flex;
@@ -182,15 +319,22 @@ main {
 	object-fit: cover;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.buy-me {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.card p {
-    font-size: 14px;
-    color: rgb(173, 172, 169);
-    overflow-wrap: break-word;
+.buy-me > button {
+	background-color: #ff4b2b;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
 }
+
+/* End of slider section */
 
 footer{
     margin-top: 15px;
@@ -282,7 +426,26 @@ footer{
 
 
 
-/* Responsive styles */
+@media only screen and (min-width: 650px) {
+
+	.head1 img{
+		height: 4rem;
+	}
+	.head2{
+		display: flex;
+	}
+	.head3{
+		display: flex;
+	}
+	.mobile-menu {
+		display: none;
+	}
+	.header-button {
+		display: none;
+	}
+}
+
+/* 27-07-25 6:30 am: Redundant, to remove later
 @media (max-width: 650px) {
     header {
       flex-direction: column;
@@ -325,6 +488,7 @@ footer{
     }
 
   }
+ *End of section */
 
 /*form section*/
 .contact-container {
