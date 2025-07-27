@@ -184,8 +184,25 @@ main {
 	height: 100%;
 }
 
+.swiper2 {
+  width: 100%;
+  height: 100%;
+}
+
 .swiper-container {
 	background: transparent;
+}
+
+.testCss {
+  background-color: #fff;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 10px;
+	cursor: pointer;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -416,50 +433,6 @@ footer{
 	}
 }
 
-/* 27-07-25 6:30 am: Redundant, to remove later
-@media (max-width: 650px) {
-    header {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .head1 img{
-      height: 3rem;
-    }
-  
-    .head2 ul {
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    .head2 ul li {
-      margin: 10px 0;
-    }
-
-    .foot-panel3{
-      flex-wrap: wrap;
-      height: 100%;
-      padding: 10px;
-    }
-  
-    .foot-desc{
-       width: 50%;
-    }
-
-    .cards1{
-        margin: 0;
-    }
-
-    .user-id{
-        width: 100%;
-    }
-
-    .btn{
-      width: 20%;
-    }
-
-  }
- *End of section */
 
 /*form section*/
 .contact-container {
