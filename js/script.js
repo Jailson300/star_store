@@ -1,5 +1,6 @@
-import { collection, doc, getDoc, getDocs, getFirestore, connectFirestoreEmulator } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js'
-import { db } from "./firebase.js"
+import { collection, query, where, orderBy, doc, getDoc, getDocs, getFirestore, connectFirestoreEmulator } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js'
+import { signInWithPopup, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js'
+import { db, auth } from "./firebase.js"
 
 const userIdInput = document.querySelector("#userId");
 const userZnInput = document.querySelector("#userZn");
@@ -202,7 +203,9 @@ orderStatusBtn.addEventListener("click", () => {
 	orderStatusBtn.innerHTML = "Checking..."
 	const order_id = orderIdInput.value
 	console.log(order_id)
+
 	const ordersColl = collection(db, "tenants", "star-store", "orders")
+
 	const docRef = doc(ordersColl, order_id)
 	getDoc(docRef).then((docSnap) => {
 		if (docSnap.exists()) {
@@ -239,3 +242,65 @@ headerButtons.forEach(button => {
 		mobileMenuList.classList.toggle("mobile-menu-list-shown")
 	})
 })
+
+const history = document.querySelector("#history")
+const clicker = document.querySelector(".mobile-menu-header > .clicker")
+const btn = document.createElement("button");
+btn.classList.add("clicker")
+btn.addEventListener("click", () => {
+	console.log("signing out")
+	auth.signOut();
+	window.location.reload();
+})
+
+onAuthStateChanged(auth, (user) => {
+	if (user) {
+		console.log(user);
+		// User is signed in, see docs for a list of available properties
+		// https://firebase.google.com/docs/reference/js/firebase.User
+
+		const uid = user.uid;
+		const list = document.createElement("ul")
+
+		const collRef = collection(db, "tenants", "star-store", "orders")
+		const q = query(collRef, where("uuid", "==", uid), orderBy("timestamp", "desc"));
+		btn.textContent = user.displayName ?? user.email;
+		clicker.replaceWith(btn)
+
+		getDocs(q).then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				const data = doc.data()
+				console.log(data.order_id);
+				if (!data.cost || !data.id || !data.name || !data.order_id || !data.package || !data.server || !data.status) {
+					console.log("Invalid data!!")
+					console.log(data);
+					return;
+				}
+				const li = document.createElement("li")
+				li.innerHTML = `
+					<div>
+						<h3>${data.name}</h3>
+						<p>${data.id} (${data.server})</p>
+					</div>
+					<div>
+						<h4>${data.package} for <span class=${data.status =='done' ? 'green': 'red'}>${data.cost}</span></h4>
+						<p>${data.order_id}</p>
+					</div>
+				`
+				list.appendChild(li)
+			})
+			history.innerHTML = `
+			<div class="history">
+				<h2>Order History</h2>
+				${list.outerHTML}
+			</div>
+			`
+
+		}).catch((error) => {
+			console.log(error)
+		})
+	} else {
+		// User is signed out
+		// ...
+	}
+});

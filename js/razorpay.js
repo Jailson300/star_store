@@ -1,13 +1,14 @@
 import { httpsCallable } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-functions.js'
 import { successModalFunc } from "./script.js"
 import { functions } from "./firebase.js"
+import { auth } from './firebase.js';
 
 let options = {
 	"key": "rzp_test_Clqdrw9cYS8CDc", // Enter the Key ID generated from the Dashboard
 	"amount": "1000",
 	"currency": "INR",
-	"description": "Acme Corp",
-	"image": "example.com/image/rzp.jpg",
+	"description": "Star Store",
+	"image": "./star_logo.png",
 	"order_id": "",
 	"prefill":
 		{
@@ -108,7 +109,8 @@ cards.forEach(card => {
 						id: userIdInput.value,
 						server: userZnInput.value,
 						package: card.querySelector('h4').textContent,
-						cost: card.querySelector('button').textContent
+						cost: card.querySelector('button').textContent,
+						uuid: auth.currentUser.uid ?? undefined
 					}
 					console.log(detailsForServer);
 					sendOrderNotification(detailsForServer).then((result) => {

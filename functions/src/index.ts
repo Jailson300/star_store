@@ -11,7 +11,7 @@
 // import * as logger from "firebase-functions/logger";
 
 import { initializeApp } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+import { getFirestore, FieldValue } from "firebase-admin/firestore";
 import { CallableRequest, onCall, onRequest } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
 import axios from "axios";
@@ -87,6 +87,7 @@ export const sendOrderNotification = onCall({
 	const server = (request.data.server);
 	const packageName = (request.data.package);
 	const cost = (request.data.cost);
+	const userAuthId = (request.data.uuid);
 
 	const message = `
 *New Order Placed!* 🔥
@@ -116,9 +117,11 @@ export const sendOrderNotification = onCall({
 			package: request.data.package,
 			cost: request.data.cost,
 			status: "pending",
+			uuid: userAuthId,
+			timestamp: FieldValue.serverTimestamp(),
 		}
-
 		const firestoreRes = await db.collection("tenants").doc("star-store").collection("orders").doc(request.data.razorpay_order_id).set(data);
+
 		if (!firestoreRes) {
 			console.error("Error adding to firestore:", firestoreRes);
 			return {
@@ -157,7 +160,6 @@ export const sendOrderNotification = onCall({
 			message: "Payment verified!! Copy the order ID",
 			...data
 		};
-
 	} catch (error) {
 		console.error("Error sending message:", error);
 		return {
@@ -238,7 +240,6 @@ export const recieveTelegramCallback = onRequest({
 		- Package: ${packageName}
 		- Cost: ${cost}
 	`;
-
 
 	if (confirmOrReject == "confirm") {
 		db.collection("tenants").doc("star-store").collection("orders").doc(orderId).update({
