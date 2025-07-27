@@ -6,6 +6,8 @@
     <title>STAR STORE</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./css/modals.css">
+    <link rel="stylesheet" href="./css/tracking.css">
+    <link rel="stylesheet" href="./css/menu.css">
     <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
 	<link
 		rel="stylesheet"
@@ -45,9 +47,11 @@
 				<li><a href="index.html">Back to homepage</a></li>
 				<li><a href="aboutus.html">Who are we?</a></li>
 				<li><a href="contact.html">Wanna talk to us?</a></li>
+				<button class="clicker" id="trackToggle">Track an order</button>
 			</ul>
 		</div>
     </header>
+
     <main>
 		<div class="cards1">
 			<div class="user-id">
@@ -71,13 +75,20 @@
 			</div>
 		</div>
 
-		<div class="order-tracking">
-			<h2>Track Order</h2>
-			<div class="input-area">
-				<input id="order-id-input" placeholder="Order ID" type="text" />
-				<button id="track-button">Track</button>
+		<div class="order-tracking-container order-tracking-container-hide">
+			<div class="order-tracking-background"></div>
+			<div class="order-tracking order-tracking-hide">
+				<h2>Track Order</h2>
+				<div class="input-area">
+					<input id="order-id-input" placeholder="Order ID" type="text" />
+					<button id="track-button">Track</button>
+				</div>
+				<div id="order-status">
+					<div class="placeholder">
+						Your order will appear here
+					</div>
+				</div>
 			</div>
-			<span id="order-status"></span>
 		</div>
 
 		<div id="history">
@@ -254,6 +265,8 @@
 	<!-- All other scripts can go here -->
 	<script type="module" src="./js/script.js"></script>
 	<script type="module" src="./js/swiper.js"></script>
+	<script type="module" src="./js/tracking.js"></script>
+	<script type="module" src="./js/menu.js"></script>
 	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 	<script type="module" src="./js/razorpay.js"></script>
 

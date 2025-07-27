@@ -29,87 +29,6 @@ header {
 	font-size: 2rem;
 }
 
-.mobile-menu-hidden {
-	background-color: transparent;
-	z-index: -999;
-}
-
-.mobile-menu-shown {
-	background-color: rgba(0, 0, 0, 0.8);
-	z-index: 999;
-}
-
-.mobile-menu {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: end;
-	align-items: center;
-	backdrop-filter: blur(5px);
-	transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, z-index 0.3s ease-out;
-}
-
-.mobile-menu-list-hidden {
-	transform: translateX(100%);
-}
-
-.mobile-menu-list-shown {
-	transform: translateX(0);
-}
-
-.mobile-menu-list {
-	list-style: none;
-	height: 100%;
-	background-color: #fff;
-	width: 100%;
-	max-width: 20rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	align-items: end;
-	gap: 1rem;
-	padding: 1rem;
-	transition: all 0.3s ease-in-out;
-}
-
-.mobile-menu-list a {
-	color: black;
-}
-
-.mobile-menu-list a:hover {
-	color: #a8a8a8;
-}
-
-.mobile-menu-header {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1rem;
-}
-
-.mobile-menu-header > .clicker {
-	padding: 0.5rem 1rem;
-	background-color: #ff4b2b;
-	color: white;
-	border-radius: 5px;
-	cursor: pointer
-}
-
-.mobile-menu-header > button {
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	padding: 0.5rem 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-/* End of mobile menu section */
-
 main {
 	display: flex;
 	flex-direction: column;
@@ -164,7 +83,7 @@ main {
 	gap: 0.5rem;
 }
 
-.user-info input, .order-tracking input {
+.user-info input {
     background-color: #cfcbcb;
 	padding: 0.5rem 1rem;
 	border: 0px solid #cfcbcb;
@@ -173,13 +92,9 @@ main {
 	transition: outline 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.user-info input:focus, .order-tracking input:focus {
+.user-info input:focus {
 	border: 1px solid #ff4b2b;
 	outline: 1px solid #ff4b2b;
-}
-
-.order-tracking input {
-	flex: 5;
 }
 
 .user-info-id {
@@ -190,7 +105,7 @@ main {
 	flex-grow: 2;
 }
 
-.user-info button, .order-tracking button {
+.user-info button {
 	background-color: #ff4b2b;
 	border-radius: 5px;
 	color: white;
@@ -198,22 +113,6 @@ main {
 	padding: 10px;
 	flex-grow: 1;
 	cursor: pointer;
-}
-
-.order-tracking {
-	padding: 0.5rem;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-	display: flex;
-	flex-direction: column;
-}
-
-.order-tracking .input-area {
-	display: flex;
-	justify-content: center;
-	gap: 0.5rem;
-	max-width: 50rem;
 }
 
 .head1{
@@ -279,6 +178,7 @@ main {
 	width: 100%;
 	padding: 0.5rem;
 }
+
 .swiper {
 	width: 100%;
 	height: 100%;
@@ -308,12 +208,12 @@ main {
 .bestseller {
 	background-color: #ff4b2b;
 	color: white;
-	padding: 1rem;
+	padding: 5%;
 	border-radius: 5px;
 	position: absolute;
-	top: 1rem;
-	left: -3rem;
-	width: 12rem;
+	top: 10%;
+	left: -30%;
+	width: 100%;
 	transform: rotate(-45deg);
 	text-align: center;
 	font-size: 0.8rem;
@@ -366,6 +266,7 @@ main {
 
 footer{
     margin-top: 15px;
+	width: 100%;
 }
 
 .foot-panel1 {
@@ -446,13 +347,15 @@ footer{
     min-height: 300px;
     display: flex;
 	flex-wrap: wrap;
+	width: 100%;
 	padding: 1rem;
 	gap: 1rem;
 }
 
-.foot-panel3 > * {
-	flex: 1;
+.foot-desc {
+	flex: 1 1 30%;
 }
+
 
 .foot-panel3 p{
     color: #a8a8a8;
@@ -460,7 +363,7 @@ footer{
 
 .social{
     display: flex;
-    justify-content: space-evenly;
+	gap: 2rem;
 }
 
 .social a{
@@ -496,7 +399,6 @@ footer{
 
 
 @media only screen and (min-width: 650px) {
-
 	.head1 img{
 		height: 4rem;
 	}
@@ -506,11 +408,11 @@ footer{
 	.head3{
 		display: flex;
 	}
-	.mobile-menu {
-		display: none;
-	}
 	.header-button {
 		display: none;
+	}
+	.foot-desc {
+		flex: 1 1 20%;
 	}
 }
 
