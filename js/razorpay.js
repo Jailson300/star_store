@@ -86,7 +86,7 @@ cards.forEach(card => {
 		loadingModal.style.display = "flex"
 
 		// This next line of code will not work if a "Card" does not have a "h4" element
-		const costText = card.querySelector('h4').textContent
+		const costText = card.querySelector('button').textContent
 		// Extract integer from costText. The string will be of the form "Rs. [number of any length]"
 		const cost = parseInt(costText.substring(3)) * 100
 		options.amount = cost
@@ -107,8 +107,8 @@ cards.forEach(card => {
 						name: userNameContainer.textContent,
 						id: userIdInput.value,
 						server: userZnInput.value,
-						package: card.querySelector('p').textContent,
-						cost: card.querySelector('h4').textContent
+						package: card.querySelector('h4').textContent,
+						cost: card.querySelector('button').textContent
 					}
 					console.log(detailsForServer);
 					sendOrderNotification(detailsForServer).then((result) => {
@@ -126,6 +126,9 @@ cards.forEach(card => {
 			} else {
 				alert("Unable to create order")
 			}
+		}).catch((error) => {
+			loadingModal.style.display = "none"
+			console.error(error)
 		})
 	})
 })
