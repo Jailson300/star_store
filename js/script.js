@@ -46,31 +46,82 @@ checkButton.addEventListener("click", () => {
 		});
 })
 
-const cardsData = [
+const smallPacks = [
 	{
 		"price": 105,
-		"package": 86
+		"image": "assets/1.png",
+		"bestseller": false,
+		"package": 86,
 	},
 	{
 		"price": 220,
+		"image": "assets/1.png",
+		"bestseller": true,
 		"package": 172
 	},
 	{ 
 		"price": 330,
+		"image": "assets/2.png",
+		"bestseller": false,
 		"package": 257
 	},
 	{ 
 		"price": 440,
+		"image": "assets/2.png",
+		"bestseller": false,
 		"package": 344
 	},
 	{ 
 		"price": 550,
+		"image": "assets/3.png",
+		"bestseller": false,
 		"package": 429
 	},
 	{ 
 		"price": 660,
+		"image": "assets/3.png",
+		"bestseller": false,
 		"package": 514
 	},
+	{ 
+		"price": 770,
+		"image": "assets/4.png",
+		"bestseller": false,
+		"package": 600
+	},
+	{ 
+		"price": 880,
+		"image": "assets/4.png",
+		"bestseller": false,
+		"package": 706
+	},
+	{ 
+		"price": 1300,
+		"image": "assets/5.png",
+		"bestseller": false,
+		"package": 1050
+	},
+	{ 
+		"price": 1750,
+		"image": "assets/5.png",
+		"bestseller": false,
+		"package": 1406
+	},
+	{ 
+		"price": 2650,
+		"image": "assets/6.png",
+		"bestseller": false,
+		"package": 2195
+	},
+	{ 
+		"price": 4400,
+		"image": "assets/6.png",
+		"bestseller": false,
+		"package": 3688
+	},
+]
+
+const largePacks = [
 	{ 
 		"price": 770,
 		"package": 600
@@ -98,15 +149,22 @@ const cardsData = [
 ]
 
 const cardsContainer = document.querySelector("#cards")
-cardsData.forEach(card => {
+smallPacks.forEach(card => {
 	const cardElement = document.createElement("div")
-	cardElement.classList.add("card")
+	cardElement.classList.add("swiper-slide");
 	cardElement.innerHTML = `
-		<div class="img-container">
-			<img src="Recommended.png">
+		<div class="card">
+			${
+				card.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
+			}
+			<div class="img-container">
+				<img src="${card.image}">
+			</div>
+			<div class="buy-me">
+				<h4>${card.package} Diamonds</h4>
+				<button>Rs. ${card.price}</button>
+			</div>
 		</div>
-		<h4>Rs. ${card.price}</h4>
-		<p>Diamond ${card.package}</p>
 	`
 	cardsContainer.appendChild(cardElement)
 })
@@ -167,5 +225,17 @@ orderStatusBtn.addEventListener("click", () => {
 		console.log(error)
 		orderStatusBtn.disabled = false
 		orderStatusBtn.innerHTML = "Track"
+	})
+})
+
+const headerButtons = document.querySelectorAll(".header-button")
+const mobileMenu = document.querySelector(".mobile-menu")
+const mobileMenuList = document.querySelector(".mobile-menu-list")
+headerButtons.forEach(button => {
+	button.addEventListener("click", () => {
+		mobileMenu.classList.toggle("mobile-menu-hidden")
+		mobileMenu.classList.toggle("mobile-menu-shown")
+		mobileMenuList.classList.toggle("mobile-menu-list-hidden")
+		mobileMenuList.classList.toggle("mobile-menu-list-shown")
 	})
 })
