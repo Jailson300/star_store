@@ -45,8 +45,9 @@
 			</ul>
 		</div>
     </header>
+
     <main>
-		<div class="cards1">
+        <div class="cards1">
 			<div class="user-id">
 				<!-- Make any changes you want to this section, but do not change or remove their id's -->
 				<h2>User ID and Server ID</h2>
@@ -59,28 +60,7 @@
 				<!-- End of section -->
 			 </div>
 		</div>
-
-		<div class="cards-section">
-			<h2 class="no-pad-heading">Small Packages</h2>
-			<div class="swiper">
-				<div class="swiper-wrapper" id="cards">
-				</div>
-			</div>
-		</div>
-
-    <div class="cards-section">
-			<h2 class="no-pad-heading">Large packages</h2>
-      <!-- Slider main container -->
-      <div class="swiper2">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper" id="cards1">
-    
-        </div>
-      </div>
-
-		</div>
-
-		<div class="order-tracking">
+        <div class="order-tracking">
 			<h2>Track Order</h2>
 			<div class="input-area">
 				<input id="order-id-input" placeholder="Order ID" type="text" />
@@ -95,43 +75,6 @@
 					<a href="./login.html">Sign in</a> for safer transactions and a better experience
 				</h2>
 				<p class="text-center">New customer? <a href="#">Start here</a></p>
-			</div>
-		</div>
-
-		<div id="create-order-loading-modal">
-			<div class="spinner"></div>
-		</div>
-
-		<div id="success-modal">
-			<div>
-				<div class="success-container">
-					<h2>Payment verified, but not added to the database. Please copy your order ID and contact the administrators immediately!</h2>
-					<p id="order-details">Rs. 4400 for 3400 Diamonds</p>
-					<!-- A piece of "code" element with a copy button -->
-					<div class="clipboarder">
-						<span>Order ID: </span>
-						<input id="order-id" type="text" readonly value="helloothere" />
-						<button id="copy-button">Copy</button>
-					</div>
-
-					<div class="warning">
-						<div class="warning-signs">
-							<i class="fa-solid fa-triangle-exclamation"></i>
-							<i class="fa-solid fa-triangle-exclamation"></i>
-							<h3>IMPORTANT</h3>
-							<i class="fa-solid fa-triangle-exclamation"></i>
-							<i class="fa-solid fa-triangle-exclamation"></i>
-						</div>
-						<p>
-						Copying the order ID to clipboard will allow you to track your order.
-						<br><br>
-							Loosing your order ID will result in NON REFUNDABLE and UNRECOVERABLE loss of your order.
-							There is NOTHING we can do to help you.
-						</p>
-					</div>
-
-					<button id="close-modal">Close</button>
-				</div>
 			</div>
 		</div>
     </main>
@@ -192,28 +135,5 @@
 	<script type="module" src="./js/swiper.js"></script>
 	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 	<script type="module" src="./js/razorpay.js"></script>
-
-	<!-- 
-    <script>/*slider*/
-        const track = document.getElementById('productTrack');
-        const cardWidth = 270; // card + margin
-        let currentPosition = 0;
-        
-        function nextSlide() {
-          const maxScroll = track.scrollWidth - document.getElementById('productSlider').offsetWidth;
-          if (currentPosition + cardWidth <= maxScroll) {
-            currentPosition += cardWidth;
-            track.style.transform = `translateX(-${currentPosition}px)`;
-          }
-        }
-        
-        function prevSlide() {
-          if (currentPosition - cardWidth >= 0) {
-            currentPosition -= cardWidth;
-            track.style.transform = `translateX(-${currentPosition}px)`;
-          }
-        }
-	</script>
-	-->
 </body>
 </html>

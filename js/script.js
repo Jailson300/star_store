@@ -125,26 +125,32 @@ const smallPacks = [
 const largePacks = [
 	{ 
 		"price": 770,
+		"image": "assets/6.png",
 		"package": 600
 	},
 	{ 
 		"price": 880,
+		"image": "assets/6.png",
 		"package": 706
 	},
 	{ 
 		"price": 1300,
+		"image": "assets/6.png",
 		"package": 1050
 	},
 	{ 
 		"price": 1750,
+		"image": "assets/6.png",
 		"package": 1406
 	},
 	{ 
 		"price": 2650,
+		"image": "assets/6.png",
 		"package": 2195
 	},
 	{ 
 		"price": 4400,
+		"image": "assets/6.png",
 		"package": 3688
 	},
 ]
@@ -168,6 +174,27 @@ smallPacks.forEach(card => {
 		</div>
 	`
 	cardsContainer.appendChild(cardElement)
+})
+
+const cardsContainer1 = document.querySelector("#cards1")
+largePacks.forEach(card => {
+	const cardElement = document.createElement("div")
+	cardElement.classList.add("swiper-slide");
+	cardElement.innerHTML = `
+		<div class="card">
+			${
+				card.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
+			}
+			<div class="img-container">
+				<img src="${card.image}">
+			</div>
+			<div class="buy-me">
+				<h4>${card.package} Diamonds</h4>
+				<button>Rs. ${card.price}</button>
+			</div>
+		</div>
+	`
+	cardsContainer1.appendChild(cardElement)
 })
 
 const successModal = document.querySelector("#success-modal")
