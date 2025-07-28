@@ -7,7 +7,7 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
-	background: #f6f5f7;
+	background: var(--background);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -19,10 +19,10 @@ body {
 
 /* --- Main Container --- */
 .container {
-	background-color: #fff;
+	background-color: var(--foreground);
 	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
-	0 10px 10px rgba(0, 0, 0, 0.22);
+	box-shadow: 0 14px 28px rgba(var(--text-rgb), 0.25), 
+	0 10px 10px rgba(var(--text-rgb), 0.22);
 	position: relative;
 	overflow: hidden;
 	width: 768px;
@@ -61,7 +61,7 @@ body {
 
 /* --- Form Styling --- */
 form {
-	background-color: #ffffff;
+	background-color: var(--foreground);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -105,9 +105,9 @@ input {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #ff4b2b;
-	background-color: #ff4b2b;
-	color: #ffffff;
+	border: 1px solid var(--highlight);
+	background-color: var(--highlight);
+	color: var(--foreground);
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -127,7 +127,7 @@ button:focus {
 
 button.ghost {
 	background-color: transparent;
-	border-color: #ffffff;
+	border-color: var(--foreground);
 }
 
 /* --- Social Login Icons --- */
@@ -139,15 +139,15 @@ button.ghost {
 	gap: 1rem;
 	background-color: #2f2f2f;
 	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgba(var(--text-rgb), 0.1);
 	cursor: pointer;
-	color: white;
+	color: var(--foreground);
 }
 
 .social-container a:hover {
-	background-color: #ff4b2b;
-	color: white;
-	border-color: #ff4b2b;
+	background-color: var(--highlight);
+	color: var(--foreground);
+	border-color: var(--highlight);
 }
 
 /* --- Overlay Container & Panels --- */
@@ -164,12 +164,12 @@ button.ghost {
 
 .overlay {
 	background: #ff416c;
-	background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-	background: linear-gradient(to right, #ff4b2b, #ff416c);
+	background: -webkit-linear-gradient(to right, var(--highlight), #ff416c);
+	background: linear-gradient(to right, var(--highlight), #ff416c);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: #ffffff;
+	color: var(--foreground);
 	position: relative;
 	left: -100%;
 	height: 100%;
@@ -242,7 +242,7 @@ button.ghost {
 	background: transparent;
 	border: none;
 	cursor: pointer;
-	color: black;
+	color: var(--text);
 	gap: 0.5rem;
 }
 

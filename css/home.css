@@ -1,0 +1,55 @@
+.line {
+	width: 100%;
+	border: 2px solid var(--text);
+}
+
+.games-list {
+	width: 100%;
+	display: grid;
+	gap: 2rem;
+	padding: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.games-list .game {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background-color: var(--foreground);
+	border-radius: 5px;
+	box-shadow: 0 6px 20px rgba(var(--text-rgb), 0.3);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	text-decoration: none;
+	color: var(--text);
+}
+
+.games-list .game:hover {
+	transform: scale(1.05);
+}
+
+.games-list h3 {
+	padding: 0.5rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.games-list .img-container {
+	width: 100%;
+	overflow: hidden;
+	aspect-ratio: 1 / 1;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+.games-list img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.home-header {
+	padding: 2rem;
+}

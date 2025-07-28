@@ -1,5 +1,5 @@
-import { signInWithPopup, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js'
-import { auth } from './firebase.js';
+import { signInWithPopup, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from 'firebase/auth'
+import { auth } from './firebase';
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
@@ -51,12 +51,11 @@ window.addEventListener('resize', () => {
 		//location.reload(); 
 });
 
-const signInForm = document.querySelector("#signInForm")
-const signUpForm = document.querySelector("#signUpForm")
+const signInForm = document.querySelector("#signInForm") as HTMLFormElement
+const signUpForm = document.querySelector("#signUpForm") as HTMLFormElement
 
-if (auth.currentUser) {
-	alert("Already signed in")
-	window.location.href = "index.html";
+if (!signInForm || !signUpForm) {
+	throw new Error("signInForm and signUpForm not found")
 }
 
 signInForm.addEventListener("submit", (e) => {
@@ -69,11 +68,11 @@ signInForm.addEventListener("submit", (e) => {
 		return
 	}
 	// TODO: Send email and pass to backend
-	signInWithEmailAndPassword(auth, email, pass)
+	signInWithEmailAndPassword(auth, email as string, pass as string)
 	.then((userCredential) => {
 		console.log(userCredential)
 		alert("Signed In")
-		window.location.reload();
+		window.location.href = "index.html";
 	})
 	.catch((error) => {
 		console.log(error)
@@ -96,11 +95,11 @@ signUpForm.addEventListener("submit", (e) => {
 		return
 	}
 	// TODO: Send email, pass and name to backend
-	createUserWithEmailAndPassword(auth, email, pass)
+	createUserWithEmailAndPassword(auth, email as string, pass as string)
 	.then((userCredential) => {
 		console.log(userCredential)
 		alert("Signed Up")
-		window.location.reload();
+		window.location.href = "index.html";
 	})
 	.catch((error) => {
 		console.log(error)
@@ -115,6 +114,7 @@ socialButtons.forEach(button => {
 		.then((result) => {
 			console.log(result)
 			alert("Signed In")
+			window.location.href = "index.html";
 		})
 		.catch((error) => {
 			console.log(error)

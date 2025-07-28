@@ -1,9 +1,10 @@
-import { httpsCallable } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-functions.js'
-import { successModalFunc } from "./script.js"
-import { functions } from "./firebase.js"
-import { auth } from './firebase.js';
+import { httpsCallable } from 'firebase/functions'
+import { successModalFunc } from './warningmodal';
+import { functions } from "./firebase"
+import { auth } from './firebase';
+import { hideLoadingModal, showLoadingModal } from './loadingmodal';
 
-let options = {
+let options: any  = {
 	"key": "rzp_test_Clqdrw9cYS8CDc", // Enter the Key ID generated from the Dashboard
 	"amount": "1000",
 	"currency": "INR",
@@ -58,7 +59,7 @@ let options = {
 			}
 		}
 	},
-	"handler": () => {},
+	"handler": (response: any) => {},
 	"modal": {
 		"ondismiss": function () {
 			if (confirm("Are you sure, you want to close the form?")) {
@@ -72,11 +73,15 @@ let options = {
 	}
 };
 
-const cards = document.querySelectorAll('.card')
-const userNameContainer = document.querySelector('#result')
-const userIdInput = document.querySelector("#userId");
-const userZnInput = document.querySelector("#userZn");
-const loadingModal = document.querySelector("#create-order-loading-modal")
+const cards = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>
+const userNameContainer = document.querySelector('#result') as HTMLDivElement
+const userIdInput = document.querySelector("#userId") as HTMLInputElement
+const userZnInput = document.querySelector("#userZn") as HTMLInputElement
+const resultSpan = document.querySelector("#result") as HTMLSpanElement
+if (!cards || !userNameContainer || !userIdInput || !userZnInput || !resultSpan) {
+	throw new Error("Missing elements: .card, #result, #userId, #userZn, #create-order-loading-modal, #result")
+}
+
 cards.forEach(card => {
 	card.addEventListener('click', (e) => {
 		// First check if results.textContent is filled
@@ -84,52 +89,52 @@ cards.forEach(card => {
 			alert("Please enter a valid User ID and Server ID")
 			return
 		}
-		loadingModal.style.display = "flex"
+		showLoadingModal()
 
 		// This next line of code will not work if a "Card" does not have a "h4" element
-		const costText = card.querySelector('button').textContent
+		const costText = card.querySelector('button')!.textContent as string
 		// Extract integer from costText. The string will be of the form "Rs. [number of any length]"
-		const cost = parseInt(costText.substring(3)) * 100
-		options.amount = cost
+		const cost = parseInt(costText.substring(3)) * 100 as unknown
+		options.amount = cost as string
 		// the file script.js will have a global variable called userName which will be either undefined or a string
-		if (result.textContent) {
-			options.prefill.name = result.textContent
+		if (resultSpan.textContent) {
+			options.prefill.email = resultSpan.textContent
 		}
 		const createOrder = httpsCallable(functions, 'createStarStoreOrder');
-		createOrder(options).then((result) => {
-			loadingModal.style.display = "none"
+		createOrder(options).then((result: any) => {
+			hideLoadingModal()
 			if (result.data.id) {
 				options.order_id = result.data.id
-				options.handler = (response) => {
-					loadingModal.style.display = "flex"
+				options.handler = (response: any) => {
+					showLoadingModal()
 					const sendOrderNotification = httpsCallable(functions, 'sendOrderNotification');
 					const detailsForServer = {
 						...response,
 						name: userNameContainer.textContent,
 						id: userIdInput.value,
 						server: userZnInput.value,
-						package: card.querySelector('h4').textContent,
-						cost: card.querySelector('button').textContent,
-						uuid: auth.currentUser.uid ?? undefined
+						package: card.querySelector('h4')!.textContent as string,
+						cost: card.querySelector('button')!.textContent as string,
+						uuid: auth.currentUser ? auth.currentUser.uid : undefined
 					}
 					console.log(detailsForServer);
-					sendOrderNotification(detailsForServer).then((result) => {
+					sendOrderNotification(detailsForServer).then((result: any) => {
 						console.log(result)
 						const details = `${result.data.cost} for ${result.data.package}`
-						loadingModal.style.display = "none"
+						hideLoadingModal()
 						successModalFunc(result.data.message, details, result.data.order_id);
 					}).catch((error) => {
-						loadingModal.style.display = "none"
+						hideLoadingModal()
 						console.log(error)
 					})
 				}
-				const rzp1 = new Razorpay(options)
+				const rzp1 = new (window as any).Razorpay(options) as any
 				rzp1.open()
 			} else {
 				alert("Unable to create order")
 			}
 		}).catch((error) => {
-			loadingModal.style.display = "none"
+			showLoadingModal()
 			console.error(error)
 		})
 	})
