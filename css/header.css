@@ -1,11 +1,30 @@
+/* 27-07-25 6:30 am: Made some changes to header area */
+header {
+    background-color: var(--foreground);
+    display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+	padding-right: 2rem;
+}
+
+/* 27-07-25 6:30 am: Menu/Drawer on mobile screen */
+.header-button {
+	background-color: var(--foreground);
+	border: none;
+	cursor: pointer;
+	font-size: 2rem;
+}
+
 .mobile-menu-hidden {
 	background-color: transparent;
 	z-index: -999;
 }
 
 .mobile-menu-shown {
-	background-color: rgba(0, 0, 0, 0.8);
-	z-index: 999;
+	background-color: rgba(var(--text-rgb), 0.8);
+	z-index: 100;
 }
 
 .mobile-menu {
@@ -32,7 +51,7 @@
 .mobile-menu-list {
 	list-style: none;
 	height: 100%;
-	background-color: #fff;
+	background-color: var(--foreground);
 	width: 100%;
 	max-width: 20rem;
 	display: flex;
@@ -45,11 +64,11 @@
 }
 
 .mobile-menu-list a {
-	color: black;
+	color: var(--text);
 }
 
 .mobile-menu-list a:hover {
-	color: #ff4b2b;
+	color: var(--highlight);
 }
 
 .mobile-menu-header {
@@ -62,12 +81,12 @@
 
 .mobile-menu-list .clicker {
 	padding: 0.5rem 1rem;
-	background-color: #ff4b2b;
-	color: white;
+	background-color: var(--highlight);
+	color: var(--foreground);
 	border-radius: 5px;
-	cursor: pointer
+	cursor: pointer;
 	border: none;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px rgba(var(--text-rgb), 0.2);
 }
 
 .mobile-menu-header > button {

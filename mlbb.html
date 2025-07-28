@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR STORE</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./css/tracking.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/mlbb.css">
+    <link rel="stylesheet" href="./css/adsection.css">
+    <link rel="stylesheet" href="./css/modals.css">
+    <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body class="light">
+
+	<div class="order-tracking-container order-tracking-container-hide">
+		<div class="order-tracking-background"></div>
+		<div class="order-tracking order-tracking-hide">
+			<h2>Track Order</h2>
+			<div class="input-area">
+				<input id="order-id-input" placeholder="Order ID" type="text" />
+				<button id="track-button">Track</button>
+			</div>
+			<div id="order-status">
+				<div class="placeholder">
+					Your order will appear here
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="loading-modal">
+		<div class="spinner"></div>
+	</div>
+
+	<div id="success-modal">
+		<div>
+			<div class="success-container">
+				<h2>Payment verified, but not added to the database. Please copy your order ID and contact the administrators immediately!</h2>
+				<p id="order-details">Rs. 4400 for 3400 Diamonds</p>
+				<!-- A piece of "code" element with a copy button -->
+				<div class="clipboarder">
+					<span>Order ID: </span>
+					<input id="order-id" type="text" readonly value="helloothere" />
+					<button id="copy-button">Copy</button>
+				</div>
+
+				<div class="warning">
+					<div class="warning-signs">
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						<h3>IMPORTANT</h3>
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						<i class="fa-solid fa-triangle-exclamation"></i>
+					</div>
+					<p>
+					Copying the order ID to clipboard will allow you to track your order.
+					<br><br>
+						Loosing your order ID will result in NON REFUNDABLE and UNRECOVERABLE loss of your order.
+						There is NOTHING we can do to help you.
+					</p>
+				</div>
+
+				<button id="close-modal">Close</button>
+			</div>
+		</div>
+	</div>
+
+    <header>
+        <div class="head1"><img src="star_logo.png" alt="error" height="80px"></div>
+        <div class="head2">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+        </div>
+        <div class="head3">
+            <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+        </div>
+		<button class="header-button">
+			<i class="fa-solid fa-bars"></i>
+		</button>
+		<div class="mobile-menu mobile-menu-hidden">
+			<ul class="mobile-menu-list mobile-menu-list-hidden">
+				<div class="mobile-menu-header">
+					<a class="clicker" href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+					<button class="header-button">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<li><a href="index.html">Back to homepage</a></li>
+				<li><a href="aboutus.html">Who are we?</a></li>
+				<li><a href="contact.html">Wanna talk to us?</a></li>
+				<button class="clicker" id="trackToggle">Track an order</button>
+			</ul>
+		</div>
+    </header>
+
+	<section id="ads" class="ads">
+		<fieldset class="custom-fieldset">
+			<legend class="custom-legend">Ads section</legend>
+			<div class="content">
+				Your ads will appear here
+			</div>
+		</fieldset>
+	</section>
+
+	<div class="user-input-container">
+		<div class="user-id">
+			<!-- Make any changes you want to this section, but do not change or remove their id's -->
+			<h2>User ID and Server ID</h2>
+			<span id="result"></span>
+			<div class="user-info">
+					<input id="userId" placeholder="User ID" type="text" class="user-info-id" />
+					<input id="userZn" placeholder="Server" type="text" class="user-info-zone" />
+				<button id="checkButton">Check</button>
+			</div>
+			<!-- End of section -->
+		 </div>
+	</div>
+
+
+	<main>
+		<div class="cards-section">
+			<h2 class="no-pad-heading">Small Packages</h2>
+			<div class="swiper">
+				<div class="swiper-wrapper" id="cards">
+				</div>
+			</div>
+		</div>
+
+		<div class="cards-section">
+			<h2 class="no-pad-heading">Large packages</h2>
+			<div class="swiper">
+				<div class="swiper-wrapper" id="cards1">
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<script type="module" src="src/tracking.ts"></script>
+	<script type="module" src="src/loadingmodal.ts"></script>
+	<script type="module" src="src/header.ts"></script>
+	<script type="module" src="src/mlbb.ts"></script>
+	<script type="module" src="src/razorpay.ts"></script>
+</body>
+</html>

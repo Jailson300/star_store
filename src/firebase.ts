@@ -1,10 +1,9 @@
-import { getApp, initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+import { getApp, initializeApp } from "firebase/app";
 
 // Add Firebase products that you want to use
-import { getAuth, connectAuthEmulator } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js'
-import { getFirestore, connectFirestoreEmulator } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js'
-import { getFunctions, connectFunctionsEmulator, httpsCallable } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-functions.js'
+import { getAuth, connectAuthEmulator } from 'firebase/auth'
+import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
+import { getFunctions, connectFunctionsEmulator, httpsCallable } from 'firebase/functions'
 
 const firebaseConfig = {
 	apiKey: "AIzaSyAKgw2wBBhvaBXBpiB_4-rDWDon1JTDr2c",
@@ -19,7 +18,6 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
 export const functions = getFunctions(getApp());
 export const db = getFirestore(app);
 export const auth = getAuth(app);

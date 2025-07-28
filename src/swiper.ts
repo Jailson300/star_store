@@ -1,8 +1,10 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+import Swiper from 'swiper'
+console.log("swiper");
 
 const swiper = new Swiper('.swiper', {
 	direction: 'horizontal',
 	loop: true,
+	parallax: true,
 
 	autoplay: {
 		delay: 5000,
@@ -20,12 +22,17 @@ const swiper = new Swiper('.swiper', {
 			slidesPerView: 6,
 		},
 	}
-
 });
 
+// Turns out we don't need this
+// We can use the same swiper instance for all swiper slides
+// in the project
+/*
 const swiper2 = new Swiper('.swiper2', {
+	wrapperClass: 'swiper-wrapper2',
 	direction: 'horizontal',
 	loop: true,
+	loopAddBlankSlides: true,
 
 	autoplay: {
 		delay: 5000,
@@ -45,3 +52,4 @@ const swiper2 = new Swiper('.swiper2', {
 	}
 
 });
+*/
