@@ -2,7 +2,7 @@ import Swiper from "swiper"
 
 const smallPacks = [
 	{
-		"price": 105,
+		"price": 110,
 		"image": "1.png",
 		"bestseller": false,
 		"package": 86,
@@ -14,13 +14,13 @@ const smallPacks = [
 		"package": 172
 	},
 	{ 
-		"price": 330,
+		"price": 325,
 		"image": "2.png",
 		"bestseller": false,
 		"package": 257
 	},
 	{ 
-		"price": 440,
+		"price": 435,
 		"image": "2.png",
 		"bestseller": false,
 		"package": 344
@@ -32,175 +32,157 @@ const smallPacks = [
 		"package": 429
 	},
 	{ 
-		"price": 660,
+		"price": 650,
 		"image": "3.png",
 		"bestseller": false,
 		"package": 514
 	},
 	{ 
-		"price": 770,
+		"price": 750,
 		"image": "4.png",
 		"bestseller": false,
 		"package": 600
 	},
 	{ 
-		"price": 880,
+		"price": 850,
 		"image": "4.png",
 		"bestseller": false,
 		"package": 706
 	},
+	{
+		"price": 950,
+		"image": "4.png",
+		"bestseller": false,
+		"package": 871
+	},
 	{ 
-		"price": 1300,
+		"price": 1070,
 		"image": "5.png",
 		"bestseller": false,
-		"package": 1050
-	},
-	{ 
-		"price": 1750,
-		"image": "5.png",
-		"bestseller": false,
-		"package": 1406
-	},
-	{ 
-		"price": 2650,
-		"image": "6.png",
-		"bestseller": false,
-		"package": 2195
-	},
-	{ 
-		"price": 4400,
-		"image": "6.png",
-		"bestseller": false,
-		"package": 3688
+		"package": 964
 	},
 ]
 
 const largePacks = [
 	{ 
-		"price": 770,
-		"image": "6.png",
-		"bestseller": false,
-		"package": 600
-	},
-	{ 
-		"price": 880,
-		"image": "6.png",
-		"bestseller": false,
-		"package": 706
-	},
-	{ 
-		"price": 1300,
-		"image": "6.png",
+		"price": 1270,
+		"image": "5.png",
 		"bestseller": false,
 		"package": 1050
 	},
 	{ 
-		"price": 1750,
+		"price": 1400,
 		"image": "6.png",
 		"bestseller": false,
-		"package": 1406
+		"package": 1136
 	},
 	{ 
-		"price": 2650,
+		"price": 1700,
+		"image": "6.png",
+		"bestseller": false,
+		"package": 1412
+	},
+	{ 
+		"price": 2580,
 		"image": "6.png",
 		"bestseller": false,
 		"package": 2195
 	},
 	{ 
-		"price": 4400,
+		"price": 4300,
 		"image": "6.png",
 		"bestseller": false,
 		"package": 3688
+	},
+	{ 
+		"price": 6500,
+		"image": "6.png",
+		"bestseller": false,
+		"package": 5532
+	},
+	{ 
+		"price": 10500,
+		"image": "6.png",
+		"bestseller": false,
+		"package": 9288
+	},
+]
+
+const weeklyPass = [
+	{
+		"price": 130,
+		"image": "weekly-pass.jpeg",
+		"bestseller": false,
+		"package": 1
+	},
+	{
+		"price": 260,
+		"image": "weekly-pass.jpeg",
+		"bestseller": false,
+		"package": 2
+	},
+	{
+		"price": 390,
+		"image": "weekly-pass.jpeg",
+		"bestseller": false,
+		"package": 3
+	},
+	{
+		"price": 520,
+		"image": "weekly-pass.jpeg",
+		"bestseller": false,
+		"package": 4
+	},
+	{
+		"price": 650,
+		"image": "weekly-pass.jpeg",
+		"bestseller": false,
+		"package": 5
+	},
+	{
+		"price": 1299,
+		"image": "weekly-pass.jpeg",
+		"bestseller": false,
+		"package": 10
 	},
 ]
 
 const cardsGrid = document.querySelector("#cards-grid") as HTMLDivElement
 const viewAllBtns = document.querySelectorAll(".view-all-btn") as NodeListOf<HTMLButtonElement>
-//const cardsContainer = document.querySelector("#cards") as HTMLDivElement
+const largeCardsGrid = document.querySelector("#large-cards-grid") as HTMLDivElement
+const weeklyPassGrid = document.querySelector("#weekly-pass-grid") as HTMLDivElement
+
+const cardComponent = (type: 'small' | 'large' | 'weekly' ,cardData: {price: number, image: string, bestseller: boolean, package: number}): HTMLDivElement => {
+	const div = document.createElement("div")
+	const imgUrl = new URL(`./assets/${cardData.image}`, import.meta.url);
+	div.classList.add("grid-item");
+	div.innerHTML = `
+		<div class="card">
+			${
+				cardData.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
+			}
+			<div class="img-container">
+				<img src="${imgUrl}">
+			</div>
+			<div class="buy-me">
+				<h4>${cardData.package} ${type == "weekly" ? " x Weekly Pass" : "Diamonds"}</h4>
+				<button>Rs. ${cardData.price}</button>
+			</div>
+		</div>
+	`
+	return div
+}
 
 smallPacks.forEach(card => {
-	/*const cardElement = document.createElement("div")
-	cardElement.classList.add("swiper-slide");
-	const imgUrl = new URL(`./assets/${card.image}`, import.meta.url);
-	console.log(imgUrl)
-	cardElement.innerHTML = `
-		<div class="card">
-			${
-				card.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
-			}
-			<div class="img-container">
-				<img src="${imgUrl}">
-			</div>
-			<div class="buy-me">
-				<h4>${card.package} Diamonds</h4>
-				<button>Rs. ${card.price}</button>
-			</div>
-		</div>
-	`
-	cardsContainer.appendChild(cardElement)
-	*/
-	const cardGridElement = document.createElement("div")
-	const imgUrl = new URL(`./assets/${card.image}`, import.meta.url);
-	cardGridElement.classList.add("grid-item");
-	cardGridElement.innerHTML = `
-		<div class="card">
-			${
-				card.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
-			}
-			<div class="img-container">
-				<img src="${imgUrl}">
-			</div>
-			<div class="buy-me">
-				<h4>${card.package} Diamonds</h4>
-				<button>Rs. ${card.price}</button>
-			</div>
-		</div>
-	`
-	cardsGrid.appendChild(cardGridElement)
+	cardsGrid.appendChild(cardComponent("small", card))
 })
 
-const largeCardsGrid = document.querySelector("#large-cards-grid") as HTMLDivElement
-//const cardsContainer1 = document.querySelector("#cards1") as HTMLDivElement
-
 largePacks.forEach(card => {
-	/*
-	const cardElement = document.createElement("div")
-	cardElement.classList.add("swiper-slide");
-	const imgUrl = new URL(`./assets/${card.image}`, import.meta.url).href;
-	cardElement.innerHTML = `
-		<div class="card">
-			${
-				card.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
-			}
-			<div class="img-container">
-				<img src="${imgUrl}">
-			</div>
-			<div class="buy-me">
-				<h4>${card.package} Diamonds</h4>
-				<button>Rs. ${card.price}</button>
-			</div>
-		</div>
-	`
-	cardsContainer1.appendChild(cardElement)
-	*/
-	const imgUrl = new URL(`./assets/${card.image}`, import.meta.url).href;
-	const cardGridElement = document.createElement("div")
-	cardGridElement.classList.add("grid-item");
-	cardGridElement.innerHTML = `
-		<div class="card">
-			${
-				card.bestseller ? `<div class="bestseller">Top Deal</div>` : ""
-			}
-			<div class="img-container">
-				<img src="${imgUrl}">
-			</div>
-			<div class="buy-me">
-				<h4>${card.package} Diamonds</h4>
-				<button>Rs. ${card.price}</button>
-			</div>
-		</div>
-	`
-	largeCardsGrid.appendChild(cardGridElement)
+	largeCardsGrid.appendChild(cardComponent("large", card))
+})
+
+weeklyPass.forEach(card => {
+	weeklyPassGrid.appendChild(cardComponent("weekly", card))
 })
 
 const resetGridHeight = (id: string) => {
@@ -214,10 +196,12 @@ const resetGridHeight = (id: string) => {
 
 resetGridHeight("cards-grid")
 resetGridHeight("large-cards-grid")
+resetGridHeight("weekly-pass-grid")
 
 window.addEventListener("resize", () => {
 	resetGridHeight("cards-grid")
 	resetGridHeight("large-cards-grid")
+	resetGridHeight("weekly-pass-grid")
 })
 
 viewAllBtns.forEach(button => {
@@ -303,4 +287,3 @@ checkButton.addEventListener("click", () => {
 			checkButton.innerHTML = "Check";
 		});
 })
-
