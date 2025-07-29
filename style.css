@@ -161,15 +161,6 @@ main {
     color: white;
 }
 
-/* 27-07-25 6:30 am: Deprecated, to remove later
-/*
-.cards{
-    margin: 0.5rem;
-    display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1rem;
-}
-*/
 
 /* 27-07-25 6:30 am: Slider in the main section */
 .cards-section {
