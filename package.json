@@ -1,0 +1,15 @@
+{
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"vite": "^7.0.6"
+	},
+	"dependencies": {
+		"firebase": "^12.0.0",
+		"razorpay": "^2.9.6",
+		"swiper": "^11.2.10"
+	}
+}
