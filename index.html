@@ -150,28 +150,7 @@
 	<script type="module" src="./src/script.ts"></script>
 	<script type="module" src="./src/main.ts"></script>
 	<script type="module" src="./src/tracking.ts"></script>
+	<script type="module" src="./src/header.ts"></script>
 
-	<!-- 
-    <script>/*slider*/
-        const track = document.getElementById('productTrack');
-        const cardWidth = 270; // card + margin
-        let currentPosition = 0;
-        
-        function nextSlide() {
-          const maxScroll = track.scrollWidth - document.getElementById('productSlider').offsetWidth;
-          if (currentPosition + cardWidth <= maxScroll) {
-            currentPosition += cardWidth;
-            track.style.transform = `translateX(-${currentPosition}px)`;
-          }
-        }
-        
-        function prevSlide() {
-          if (currentPosition - cardWidth >= 0) {
-            currentPosition -= cardWidth;
-            track.style.transform = `translateX(-${currentPosition}px)`;
-          }
-        }
-	</script>
-	-->
 </body>
 </html>
