@@ -19,7 +19,7 @@ onAuthStateChanged(auth, (user) => {
 		const uid = user.uid;
 		const list = document.createElement("ul")
 
-		const collRef = collection(db, "tenants", "star-store", "orders")
+		const collRef = collection(db, "tenants", "star-store-lhgmd", "orders")
 		const q = query(collRef, where("uuid", "==", uid), orderBy("timestamp", "desc"));
 		btn.textContent = user.displayName ?? user.email;
 

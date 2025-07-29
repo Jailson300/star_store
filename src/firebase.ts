@@ -21,7 +21,7 @@ export const app = initializeApp(firebaseConfig);
 export const functions = getFunctions(getApp());
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-auth.tenantId = "star-store"
+auth.tenantId = "star-store-lhgmd"
 
 // Emulators section
 // Should only use emulators if, and only if the url is localhost
