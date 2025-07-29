@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 
-const clicker = document.querySelector(".mobile-menu-header > .clicker") as HTMLDivElement
+const clicker = document.querySelector(".mobile-menu-header > .clicker") as HTMLLinkElement
 const btn = document.createElement("button");
 
 btn.classList.add("clicker")
@@ -13,11 +13,12 @@ btn.addEventListener("click", () => {
 
 onAuthStateChanged(auth, (user) => {
 	console.log("Auth state is changed");
-	if (user) {
+	if (user?.uid) {
+		console.log("usder is logged in")
 		btn.textContent = user.displayName ?? user.email;
 		clicker.replaceWith(btn)
 	} else {
-		clicker.replaceWith(btn)
+		console.log("User is not logged in")
 	}
 });
 
