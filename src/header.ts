@@ -22,8 +22,8 @@ onAuthStateChanged(auth, (user) => {
 });
 
 const headerButtons = document.querySelectorAll(".header-button") as NodeListOf<HTMLButtonElement>
-const mobileMenu = document.querySelector(".mobile-menu")
-const mobileMenuList = document.querySelector(".mobile-menu-list")
+const mobileMenu = document.querySelector(".mobile-menu") as HTMLDivElement
+const mobileMenuList = document.querySelector(".mobile-menu-list") as HTMLDivElement
 console.log("hello")
 
 if (!headerButtons || !mobileMenuList || !mobileMenu) {
@@ -33,6 +33,7 @@ if (!headerButtons || !mobileMenuList || !mobileMenu) {
 export const openMenu = () => {
 	mobileMenu.classList.toggle("mobile-menu-hidden")
 	mobileMenu.classList.toggle("mobile-menu-shown")
+	mobileMenu.style.transition = "background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out"
 
 	setTimeout(() => {
 		mobileMenuList.classList.toggle("mobile-menu-list-hidden")
@@ -43,6 +44,7 @@ export const openMenu = () => {
 export const closeMenu = () => {
 	mobileMenuList.classList.toggle("mobile-menu-list-hidden")
 	mobileMenuList.classList.toggle("mobile-menu-list-shown")
+	mobileMenu.style.transition = "background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, z-index 0.3s ease-in-out"
 
 	setTimeout(() => {
 		mobileMenu.classList.toggle("mobile-menu-hidden")

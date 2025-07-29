@@ -45,7 +45,7 @@ const orderResultHolder = document.querySelector("#order-status") as HTMLDivElem
 
 orderStatusBtn.addEventListener("click", () => {
 	// Get data from firestore
-	// tenants->star-store->orders->order_id
+	// tenants->star-store-lhgmd->orders->order_id
 	// order_id is in orderIdInput
 	orderStatusBtn.disabled = true
 	orderStatusBtn.innerHTML = "Checking..."
@@ -56,7 +56,7 @@ orderStatusBtn.addEventListener("click", () => {
 		alert("Enter an order id")
 	}
 
-	const ordersColl = collection(db, "tenants", "star-store", "orders")
+	const ordersColl = collection(db, "tenants", "star-store-lhgmd", "orders")
 
 	const docRef = doc(ordersColl, order_id)
 	getDoc(docRef).then((docSnap) => {
