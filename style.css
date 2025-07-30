@@ -155,15 +155,6 @@ main {
     color: var(--foreground);
 }
 
-/* 27-07-25 6:30 am: Deprecated, to remove later
-/*
-.cards{
-    margin: 0.5rem;
-    display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1rem;
-}
-*/
 
 
 footer{
@@ -228,76 +219,6 @@ footer{
 	color: var(--highlight);
 	cursor: pointer;
 }
-
-.foot-panel2{
-    background-color: #37475a;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.foot-panel2 a{
-    color: var(--foreground);
-    font-size: 0.85rem;
-    text-decoration: none;
-}
-
-.foot-panel3 {
-    background-color: #222f3d;
-    color: var(--foreground);
-    min-height: 300px;
-    display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	padding: 1rem;
-	gap: 1rem;
-}
-
-.foot-desc {
-	flex: 1 1 30%;
-}
-
-
-.foot-panel3 p{
-    color: #a8a8a8;
-}
-
-.social{
-    display: flex;
-	gap: 2rem;
-}
-
-.social a{
-    display: flex;
-    font: 14px;
-    margin-top: 8px;
-    color: #dddddd;
-    text-decoration: none;
-}
-
-.social a:hover{
-    transform: scale(1.5);
-}
-
-.foot-panel5{
-    background-color: #0f1111;
-    color: var(--foreground);
-    height: 80px;
-    font-size: 12px;
-    text-align: center;
-    padding: 10px;
-    padding-bottom: 0;
-}
-
-.pages{
-    padding: 10px;
-}
-
-.copyright{
-    padding: 0;
-}
-
 
 
 @media only screen and (min-width: 650px) {
