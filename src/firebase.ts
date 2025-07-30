@@ -25,10 +25,10 @@ auth.tenantId = "star-store-lhgmd"
 
 // Emulators section
 // Should only use emulators if, and only if the url is localhost
-if (window.location.hostname === "localhost") {
-	console.log("running in emulator mode");
-	connectAuthEmulator(auth, "http://localhost:9099");
-	connectFirestoreEmulator(db, "localhost", 8080);
-	connectFunctionsEmulator(functions, "localhost", 5001);
-}
+//if (window.location.hostname === "localhost") {
+//	console.log("running in emulator mode");
+//	connectAuthEmulator(auth, "http://localhost:9099");
+//	connectFirestoreEmulator(db, "localhost", 8080);
+//	connectFunctionsEmulator(functions, "localhost", 5001);
+//}
 
