@@ -26,6 +26,7 @@
 </head>
 <!-- Important! Every <body> element has to have either "dark" or "light" class -->
 <body class="light">
+      
     <header>
         <div class="head1">
 			<img src="star_logo.png" alt="error" >
@@ -55,6 +56,21 @@
 				<button class="clicker" id="trackToggle">Track an order</button>
 			</ul>
 		</div>
+		<div class="order-tracking-container order-tracking-container-hide">
+			<div class="order-tracking-background"></div>
+			<div class="order-tracking order-tracking-hide">
+				<h2>Track Order</h2>
+				<div class="input-area">
+					<input id="order-id-input" placeholder="Order ID" type="text" />
+					<button id="track-button">Track</button>
+				</div>
+				<div id="order-status">
+					<div class="placeholder">
+						Your order will appear here
+					</div>
+				</div>
+			</div>
+		</div>
     </header>
 
 	<section id="ads" class="ads">
@@ -83,22 +99,6 @@
 			</div>
 		</div>
 
-		<div class="order-tracking-container order-tracking-container-hide">
-			<div class="order-tracking-background"></div>
-			<div class="order-tracking order-tracking-hide">
-				<h2>Track Order</h2>
-				<div class="input-area">
-					<input id="order-id-input" placeholder="Order ID" type="text" />
-					<button id="track-button">Track</button>
-				</div>
-				<div id="order-status">
-					<div class="placeholder">
-						Your order will appear here
-					</div>
-				</div>
-			</div>
-		</div>
-      
 
 		<!-- End of section -->
     </main>

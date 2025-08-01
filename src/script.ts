@@ -4,11 +4,8 @@ import { app, auth } from "./firebase"
 import { showTrackingForm } from "./tracking"
 
 const db = getFirestore(app);
-const history = document.querySelector("#history")
-const btn = document.createElement("button");
-if (!history) {
-	throw new Error("Missing elements: #history, .mobile-menu-header > .clicker")
-}
+const history = document.querySelector("#history") as HTMLDivElement
+const btn = document.createElement("button") as HTMLButtonElement
 
 onAuthStateChanged(auth, (user) => {
 	console.log("Auth state is changed");

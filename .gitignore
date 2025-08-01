@@ -14,3 +14,4 @@ emulator_data/
 dist/
 .firebase/
 firebase*.log
+.vite/
