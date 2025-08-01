@@ -109,52 +109,16 @@ main {
 	transition: all 0.3s ease-in-out;
 }
 
-.head1{
-  padding: 0;
-  margin: 0;
-}
 
-.head1 img{
-  width: 100%;
-  height: 4rem;
-  padding: 0.85rem;
-  margin: 0;
+/* 27-07-25 6:30 am: Deprecated, to remove later
+/*
+.cards{
+    margin: 0.5rem;
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
 }
-
-.head2{
-    display: none;
-    list-style: none;
-    justify-content: space-evenly;
-}
-
-.head2 a{
-    color: var(--text);
-    font-size: 16px;
-    font-weight: 700;
-    padding: 10px;
-    display: flex;
-    text-decoration: none;
-}
-
-/* 27-07-25 6:53 am: Changed hover color */
-.head2 a:hover{
-    background-color: var(--highlight);
-    color: var(--foreground);
-    border-radius: 5px;
-}
-
-/* 27-07-25 6:53 am: Changed background color */
-.head3 {
-	display: none;
-	background-color: var(--highlight);
-	padding: 0.5rem 1rem;
-	border-radius: 5px;
-}
-
-.head3 a{
-    color: var(--foreground);
-}
-
+*/
 
 
 footer{
@@ -220,25 +184,80 @@ footer{
 	cursor: pointer;
 }
 
+.foot-panel2{
+    background-color: #37475a;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot-panel2 a{
+    color: var(--foreground);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.foot-panel3 {
+    background-color: #222f3d;
+    color: var(--foreground);
+    min-height: 300px;
+    display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+.foot-desc {
+	flex: 1 1 30%;
+}
+
+
+.foot-panel3 p{
+    color: #a8a8a8;
+}
+
+.social{
+    display: flex;
+	gap: 2rem;
+}
+
+.social a{
+    display: flex;
+    font: 14px;
+    margin-top: 8px;
+    color: #dddddd;
+    text-decoration: none;
+}
+
+.social a:hover{
+    transform: scale(1.5);
+}
+
+.foot-panel5{
+    background-color: #0f1111;
+    color: var(--foreground);
+    height: 80px;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.pages{
+    padding: 10px;
+}
+
+.copyright{
+    padding: 0;
+}
 
 @media only screen and (min-width: 650px) {
-	.head1 img{
-		height: 4rem;
-	}
-	.head2{
-		display: flex;
-	}
-	.head3{
-		display: flex;
-	}
-	.header-button {
-		display: none;
-	}
 	.foot-desc {
 		flex: 1 1 20%;
 	}
 }
-
 
 /*form section*/
 .contact-container {
