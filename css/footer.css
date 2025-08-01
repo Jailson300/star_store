@@ -66,3 +66,16 @@
 .copyright{
     padding: 0;
 }
+
+.payments{
+    display: flex;
+	gap: 2rem;
+}
+
+.payments li{
+    display: flex;
+    font: 14px;
+    margin-top: 8px;
+    color: #000000;
+    text-decoration: none;
+}
