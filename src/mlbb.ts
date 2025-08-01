@@ -185,23 +185,38 @@ weeklyPass.forEach(card => {
 	weeklyPassGrid.appendChild(cardComponent("weekly", card))
 })
 
-const resetGridHeight = (id: string) => {
+const closeGrid = (id: string) => {
 	const grid = document.querySelector(`#${id}`) as HTMLDivElement
+	grid.dataset.state = "closed"
 	const oneCard = document.querySelector(".grid-item") as HTMLDivElement
 	const rowHeight = oneCard.offsetHeight;
 	const paddingOfGrid = window.getComputedStyle(grid).padding;
-	const gapOfGrid = window.getComputedStyle(grid).gap;
 	grid.style.height = `${(rowHeight * 1) + (parseInt(paddingOfGrid) * 2)}px`;
 }
 
-resetGridHeight("cards-grid")
-resetGridHeight("large-cards-grid")
-resetGridHeight("weekly-pass-grid")
+const openGrid = (id: string) => {
+	const grid = document.querySelector(`#${id}`) as HTMLDivElement
+	grid.dataset.state = "open"
+	grid.style.height = (grid.scrollHeight + "px");
+}
+
+const resizeAfterWindowEvent = (id: string) => {
+	const grid = document.querySelector(`#${id}`) as HTMLDivElement
+	if (grid.dataset.state == "open") {
+		openGrid(id)
+	} else {
+		closeGrid(id)
+	}
+}
+
+closeGrid("cards-grid")
+closeGrid("large-cards-grid")
+closeGrid("weekly-pass-grid")
 
 window.addEventListener("resize", () => {
-	resetGridHeight("cards-grid")
-	resetGridHeight("large-cards-grid")
-	resetGridHeight("weekly-pass-grid")
+	resizeAfterWindowEvent("cards-grid")
+	resizeAfterWindowEvent("large-cards-grid")
+	resizeAfterWindowEvent("weekly-pass-grid")
 })
 
 viewAllBtns.forEach(button => {
@@ -210,10 +225,10 @@ viewAllBtns.forEach(button => {
 		const id = button.dataset.id as string;
 		const grid = document.querySelector(`#${id}`) as HTMLDivElement
 		if (grid.style.height == (grid.scrollHeight + "px")) {
-			resetGridHeight(id)
+			closeGrid(id)
 			button.innerHTML = "View all"
 		} else {
-			grid.style.height = (grid.scrollHeight + "px");
+			openGrid(id)
 			button.innerHTML = "Close"
 		}
 	})
