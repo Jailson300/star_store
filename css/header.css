@@ -9,6 +9,71 @@ header {
 	padding-right: 2rem;
 }
 
+.head1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 0.5rem;
+}
+
+.head1 > img {
+	object-fit: contain;
+	height: 3rem;
+}
+
+.head2 {
+    display: none;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.head2 a{
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px;
+    display: flex;
+    text-decoration: none;
+}
+
+/* 27-07-25 6:53 am: Changed hover color */
+.head2 a:hover{
+    background-color: var(--highlight);
+    color: var(--foreground);
+    border-radius: 5px;
+}
+
+/* 27-07-25 6:53 am: Changed background color */
+.head3 {
+	display: none;
+	background-color: var(--highlight);
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+}
+
+.head3 a{
+    color: var(--foreground);
+}
+
+@media only screen and (min-width: 650px) {
+	.head1 img{
+		height: 4rem;
+	}
+	.head2{
+		display: flex;
+	}
+	.head3{
+		display: flex;
+	}
+	.header-button {
+		display: none;
+	}
+	.foot-desc {
+		flex: 1 1 20%;
+	}
+}
+
 /* 27-07-25 6:30 am: Menu/Drawer on mobile screen */
 .header-button {
 	background-color: var(--foreground);
