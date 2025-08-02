@@ -74,8 +74,8 @@
 
 .payments li{
     display: flex;
-    font: 14px;
+    font: 1px;
     margin-top: 8px;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
