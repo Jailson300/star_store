@@ -67,6 +67,16 @@
     padding: 0;
 }
 
+.foot-payment{
+    background-color: #222f3d;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
 .payments{
     display: flex;
 	gap: 2rem;
