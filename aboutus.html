@@ -20,7 +20,9 @@
     </head>
 <body class="light">
     <header>
-        <div class="head1"><img src="star_logo.png" alt="error"></div>
+        <div class="head1">
+			<img src="star_logo.png" alt="error" >
+		</div>
         <div class="head2">
             <li><a href="index.html">HOME</a></li>
             <li><a href="aboutus.html">ABOUT US</a></li>
@@ -29,6 +31,23 @@
         <div class="head3">
             <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
         </div>
+		<button class="header-button">
+			<i class="fa-solid fa-bars"></i>
+		</button>
+		<div class="mobile-menu mobile-menu-hidden">
+			<ul class="mobile-menu-list mobile-menu-list-hidden">
+				<div class="mobile-menu-header">
+					<a class="clicker" href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+					<button class="header-button">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<li><a href="index.html">Back to homepage</a></li>
+				<li><a href="aboutus.html">Who are we?</a></li>
+				<li><a href="contact.html">Wanna talk to us?</a></li>
+				<button class="clicker" id="trackToggle">Track an order</button>
+			</ul>
+		</div>
     </header>
 
     <main>
