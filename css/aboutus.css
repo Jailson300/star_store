@@ -9,8 +9,8 @@
     background-color: #ececec;
     padding: 15px;
     border-radius: 10px;
-    width: 20%;
-    max-width: 24%;
+    width: 90%;
+    max-width: 100%;
     box-shadow: 10px 5px 20px;
 }
 .card img{
@@ -25,3 +25,10 @@
     color: rgb(122, 122, 121);
     overflow-wrap: break-word;
   }
+
+  @media only screen and (min-width: 650px) {
+	.card{
+        width: 20%;
+        max-width: 24%;
+    }
+}
