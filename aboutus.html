@@ -1,174 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>STAR STORE</title>
-    
-        <!-- Required scripts and stylesheets -->
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <!-- End of section -->
-    
-        <!-- Custom scripts and stylesheets -->
-         <link rel="stylesheet" href="./css/aboutus.css">
-         <link rel="stylesheet" href="./css/footer.css">
-        <link rel="stylesheet" href="./css/modals.css">
-        <link rel="stylesheet" href="./css/tracking.css">
-        <link rel="stylesheet" href="./css/header.css">
-        <link rel="stylesheet" href="./css/adsection.css">
-        <link rel="stylesheet" href="./css/home.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
-    
-    </head>
-<body class="light">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>STAR STORE</title>
+  
+      <!-- Required scripts and stylesheets -->
+      <link rel="stylesheet" href="style.css">
+      <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <!-- End of section -->
+  
+      <!-- Custom scripts and stylesheets -->
+       <link rel="stylesheet" href="./css/aboutus.css">
+       <link rel="stylesheet" href="./css/footer.css">
+      <link rel="stylesheet" href="./css/modals.css">
+      <link rel="stylesheet" href="./css/tracking.css">
+      <link rel="stylesheet" href="./css/header.css">
+      <link rel="stylesheet" href="./css/adsection.css">
+      <link rel="stylesheet" href="./css/home.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+      <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+  </head>
+
+  <body class="light">
+    <div class="order-tracking-container order-tracking-container-hide">
+      <div class="order-tracking-background"></div>
+      <div class="order-tracking order-tracking-hide">
+        <h2>Track Order</h2>
+        <div class="input-area">
+          <input id="order-id-input" placeholder="Order ID" type="text" />
+          <button id="track-button">Track</button>
+        </div>
+        <div id="order-status">
+          <div class="placeholder">
+            Your order will appear here
+          </div>
+        </div>
+      </div>
+    </div>
     <header>
-        <div class="head1">
-			<img src="star_logo.png" alt="error" >
-		</div>
+      <div class="head1">
+        <img src="star_logo.png" alt="error" >
+      </div>
         <div class="head2">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-            <li><a href="contact.html">CONTACT US</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="aboutus.html">ABOUT US</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
         </div>
         <div class="head3">
-            <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+          <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
         </div>
-		<button class="header-button">
-			<i class="fa-solid fa-bars"></i>
-		</button>
-		<div class="mobile-menu mobile-menu-hidden">
-			<ul class="mobile-menu-list mobile-menu-list-hidden">
-				<div class="mobile-menu-header">
-					<a class="clicker" href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
-					<button class="header-button">
-						<i class="fa-solid fa-xmark"></i>
-					</button>
-				</div>
-				<li><a href="index.html">Back to homepage</a></li>
-				<li><a href="aboutus.html">Who are we?</a></li>
-				<li><a href="contact.html">Wanna talk to us?</a></li>
-				<button class="clicker" id="trackToggle">Track an order</button>
-			</ul>
-		</div>
+        <button class="header-button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="mobile-menu mobile-menu-hidden">
+          <ul class="mobile-menu-list mobile-menu-list-hidden">
+            <div class="mobile-menu-header">
+              <a class="clicker" href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+              <button class="header-button">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <li><a href="index.html">Back to homepage</a></li>
+            <li><a href="aboutus.html">Who are we?</a></li>
+            <li><a href="contact.html">Wanna talk to us?</a></li>
+            <button class="clicker" id="trackToggle">Track an order</button>
+          </ul>
+        </div>
     </header>
 
     <main>
-        <div class="section">
-            <div class="cards2">
-                <div class="card1">
-                    <h1 style="text-align: center;">About Us</h1>
-                    <p>Welcome to StarStore! We're your go-to source for enhancing your gaming experience, specializing in convenient diamond top-ups and secure game account sales.
+      <div class="section">
+        <div class="cards2">
+          <div class="card1">
+            <h1 style="text-align: center;">About Us</h1>
+            <p>Welcome to StarStore! We're your go-to source for enhancing your gaming experience, specializing in convenient diamond top-ups and secure game account sales.
 
-                        We understand the thrill of competitive gaming and the desire to unlock your full potential within your favorite titles. That's why we've built a platform dedicated to providing a reliable and efficient service for gamers like you. Whether you're looking to quickly boost your in-game currency to get that coveted skin or character, or you're searching for a pre-leveled account to jump straight into the action, we've got you covered.</p>
-                        
-                    <p>
-                         Our Mission
-                        Our mission is simple: to empower gamers with easy, safe, and affordable access to game resources. We strive to be the most trusted and user-friendly platform in the market, ensuring a seamless experience from start to finish.</p>
-                        
-                        <p>Why Choose Us?
-                        <li>Instant Diamond Top-Ups: Get your in-game diamonds quickly and hassle-free, so you can get back to playing without delay.</li>
-                        
-                        <li>Secure Account Transactions: We prioritize your safety. All account sales are conducted with rigorous security measures to protect both buyers and sellers.</li>
-                        
-                        <li>Wide Selection: We offer a diverse range of accounts and top-up options across many popular games.</li>
-                        
-                        <li>Competitive Pricing: Enjoy great value with our competitive rates on all our products and services.</li>
-                        
-                        <li>Dedicated Customer Support: Our team is here to help you every step of the way. Have a question or need assistance? We're just a click away.</li></p>
-                        
-                        <p>We're passionate about gaming, and we're committed to helping you make the most of your adventures. Join the StarStore community today and elevate your gameplay!</p>
-                </div>
-            </div>
+            We understand the thrill of competitive gaming and the desire to unlock your full potential within your favorite titles. That's why we've built a platform dedicated to providing a reliable and efficient service for gamers like you. Whether you're looking to quickly boost your in-game currency to get that coveted skin or character, or you're searching for a pre-leveled account to jump straight into the action, we've got you covered.</p>
+
+            <p>
+            Our Mission
+            Our mission is simple: to empower gamers with easy, safe, and affordable access to game resources. We strive to be the most trusted and user-friendly platform in the market, ensuring a seamless experience from start to finish.</p>
+
+            <p>Why Choose Us?
+            <li>Instant Diamond Top-Ups: Get your in-game diamonds quickly and hassle-free, so you can get back to playing without delay.</li>
+
+            <li>Secure Account Transactions: We prioritize your safety. All account sales are conducted with rigorous security measures to protect both buyers and sellers.</li>
+
+            <li>Wide Selection: We offer a diverse range of accounts and top-up options across many popular games.</li>
+
+            <li>Competitive Pricing: Enjoy great value with our competitive rates on all our products and services.</li>
+
+            <li>Dedicated Customer Support: Our team is here to help you every step of the way. Have a question or need assistance? We're just a click away.</li></p>
+
+            <p>We're passionate about gaming, and we're committed to helping you make the most of your adventures. Join the StarStore community today and elevate your gameplay!</p>
+          </div>
         </div>
-        <div class="team">
-            <h1>Our Team</h1>
-            <div class="cards">
-                <div class="card">
-                    <img src="avatar.png" alt="error">
-                    <h2>Name</h2>
-                    <p>title</p>
-                </div>
-                <div class="card">
-                    <img src="avatar.png" alt="error">
-                    <h2>Name</h2>
-                    <p>title</p>
-                </div>
-                <div class="card">
-                    <img src="avatar.png" alt="error">
-                    <h2>Name</h2>
-                    <p>title</p>
-                </div>
-                <div class="card">
-                    <img src="avatar.png" alt="error">
-                    <h2>Name</h2>
-                    <p>title</p>
-                </div>
-            </div>
+      </div>
+      <div class="team">
+        <h1>Our Team</h1>
+        <div class="cards">
+          <div class="card">
+            <img src="avatar.png" alt="error">
+            <h2>Name</h2>
+            <p>title</p>
+          </div>
+          <div class="card">
+            <img src="avatar.png" alt="error">
+            <h2>Name</h2>
+            <p>title</p>
+          </div>
+          <div class="card">
+            <img src="avatar.png" alt="error">
+            <h2>Name</h2>
+            <p>title</p>
+          </div>
+          <div class="card">
+            <img src="avatar.png" alt="error">
+            <h2>Name</h2>
+            <p>title</p>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer>
-        
-        <div class="foot-panel2">
-           <a href="#top">Back to top</a>
-        </div>
+      <div class="foot-panel2">
+        <a href="#top">Back to top</a>
+      </div>
 
-        <div class="foot-panel3">
-            <div class="foot-desc">
-                <h3>Get To Know Us</h3>
-                <p><a>About Us</a></p>
-                <p><a>Our Team</a></p>
-                <p><a>Our Policies</a></p>
-            </div>
-            <div class="foot-desc">
-                <h3>Connect with Us</h3>
-                <div class="social">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="foot-desc">
-                <h3>Developed & Managed by</h3>
-                <p>CODENEST Digital solutions pvt.ltd</p>
-            </div>
-            <div class="foot-desc">
-                <h3>Our Guarantees</h3>
-                <p><a>100% Safe and Secure</a></p>
-                <p><a>Fast Transcations</a></p>
-                <p> <a>Refund Policy</a></p>
-                <p><a>100% Purchase Protection</a></p>
-                <p><a>Help</a></p>
-            </div>
+      <div class="foot-panel3">
+        <div class="foot-desc">
+          <h3>Get To Know Us</h3>
+          <p><a>About Us</a></p>
+          <p><a>Our Team</a></p>
+          <p><a>Our Policies</a></p>
         </div>
-        <hr style="background-color: #fff;">
-        <div class="foot-payment">
-            <h3 style="margin-top: 10px;">PAYMENTS</h3>
-            <div class="payments">
-                <li><i class="fa-brands fa-paypal"></i></li>
-                <li><i class="fa-brands fa-apple-pay"></i></li>
-                <li><i class="fa-brands fa-google-pay"></i></li>
-                <li><img src="./src/assets/paytm-Photoroom.png" alt="error" width="40px" height="40px"></li>
-            </div>
+        <div class="foot-desc">
+          <h3>Connect with Us</h3>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
         </div>
+        <div class="foot-desc">
+          <h3>Developed & Managed by</h3>
+          <p>CODENEST Digital solutions pvt.ltd</p>
+        </div>
+        <div class="foot-desc">
+          <h3>Our Guarantees</h3>
+          <p><a>100% Safe and Secure</a></p>
+          <p><a>Fast Transcations</a></p>
+          <p> <a>Refund Policy</a></p>
+          <p><a>100% Purchase Protection</a></p>
+          <p><a>Help</a></p>
+        </div>
+      </div>
+      <hr style="background-color: #fff;">
+      <div class="foot-payment">
+        <h3 style="margin-top: 10px;">PAYMENTS</h3>
+        <div class="payments">
+          <li><i class="fa-brands fa-paypal"></i></li>
+          <li><i class="fa-brands fa-apple-pay"></i></li>
+          <li><i class="fa-brands fa-google-pay"></i></li>
+          <li><img src="./src/assets/paytm-Photoroom.png" alt="error" width="40px" height="40px"></li>
+        </div>
+      </div>
 
-        <div class="foot-panel5">
-            <div class="pages">
-                <a>Conditions of Use</a>
-                <a>Privacy Notice</a>
-                <a>Your Ads Privacy Choices</a>
-            </div>
-            <div class="copyright">
-                © 2025 StarStore
-            </div>
+      <div class="foot-panel5">
+        <div class="pages">
+          <a>Conditions of Use</a>
+          <a>Privacy Notice</a>
+          <a>Your Ads Privacy Choices</a>
         </div>
-        
+        <div class="copyright">
+          © 2025 StarStore
+        </div>
+      </div>
     </footer>
-</body>
+
+    <script type="module" src="./src/header.ts"></script>
+    <script type="module" src="./src/tracking.ts"></script>
+
+  </body>
 </html>

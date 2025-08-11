@@ -23,152 +23,150 @@
     <link rel="stylesheet" href="./css/home.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
-
 </head>
 <!-- Important! Every <body> element has to have either "dark" or "light" class -->
 <body class="light">
-    <header>
-        <div class="head1">
-			<img src="star_logo.png" alt="error" >
-		</div>
-        <div class="head2">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-            <li><a href="contact.html">CONTACT US</a></li>
+  <div class="order-tracking-container order-tracking-container-hide">
+    <div class="order-tracking-background"></div>
+    <div class="order-tracking order-tracking-hide">
+      <h2>Track Order</h2>
+      <div class="input-area">
+        <input id="order-id-input" placeholder="Order ID" type="text" />
+        <button id="track-button">Track</button>
+      </div>
+      <div id="order-status">
+        <div class="placeholder">
+          Your order will appear here
         </div>
-        <div class="head3">
-            <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="head1">
+      <img src="star_logo.png" alt="error" >
+    </div>
+      <div class="head2">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+      </div>
+      <div class="head3">
+        <a href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+      </div>
+      <button class="header-button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="mobile-menu mobile-menu-hidden">
+        <ul class="mobile-menu-list mobile-menu-list-hidden">
+          <div class="mobile-menu-header">
+            <a class="clicker" href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
+            <button class="header-button">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <li><a href="index.html">Back to homepage</a></li>
+          <li><a href="aboutus.html">Who are we?</a></li>
+          <li><a href="contact.html">Wanna talk to us?</a></li>
+          <button class="clicker" id="trackToggle">Track an order</button>
+        </ul>
+      </div>
+  </header>
+
+  <section id="ads" class="ads">
+    <fieldset class="custom-fieldset">
+      <legend class="custom-legend">Ads section</legend>
+      <div class="content">
+        Your ads will appear here
+      </div>
+    </fieldset>
+  </section>
+
+  <hr class="line" />
+
+  <h2 class="home-header">GAMES TOP-UP</h2>
+
+  <div id="games-list" class="games-list">
+  </div>
+
+  <main>
+    <div id="history">
+      <div class="foot-panel1">
+        <h2 class="text-center">
+          <a href="./login.html">Sign in</a> for safer transactions and a better experience
+        </h2>
+        <p class="text-center">New customer? <a href="#">Start here</a></p>
+      </div>
+    </div>
+
+
+    <!-- End of section -->
+  </main>
+  <footer>
+
+    <div class="foot-panel2">
+      <a href="#top">Back to top</a>
+    </div>
+
+    <div class="foot-panel3">
+      <div class="foot-desc">
+        <h3>Get To Know Us</h3>
+        <p><a>About Us</a></p>
+        <p><a>Our Team</a></p>
+        <p><a>Our Policies</a></p>
+      </div>
+      <div class="foot-desc">
+        <h3>Connect with Us</h3>
+        <div class="social">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
-		<button class="header-button">
-			<i class="fa-solid fa-bars"></i>
-		</button>
-		<div class="mobile-menu mobile-menu-hidden">
-			<ul class="mobile-menu-list mobile-menu-list-hidden">
-				<div class="mobile-menu-header">
-					<a class="clicker" href="login.html"><i class="fa-jelly fa-regular fa-user"></i></a>
-					<button class="header-button">
-						<i class="fa-solid fa-xmark"></i>
-					</button>
-				</div>
-				<li><a href="index.html">Back to homepage</a></li>
-				<li><a href="aboutus.html">Who are we?</a></li>
-				<li><a href="contact.html">Wanna talk to us?</a></li>
-				<button class="clicker" id="trackToggle">Track an order</button>
-			</ul>
-		</div>
-    </header>
+      </div>
+      <div class="foot-desc">
+        <h3>Developed & Managed by</h3>
+        <p>CODENEST Digital solutions pvt.ltd</p>
+      </div>
+      <div class="foot-desc">
+        <h3>Our Guarantees</h3>
+        <p><a>100% Safe and Secure</a></p>
+        <p><a>Fast Transcations</a></p>
+        <p> <a>Refund Policy</a></p>
+        <p><a>100% Purchase Protection</a></p>
+        <p><a>Help</a></p>
+      </div>
+    </div>
+    <hr style="background-color: #fff;">
+    <div class="foot-payment">
+      <h3 style="margin-top: 10px;">PAYMENTS</h3>
+      <div class="payments">
+        <li><i class="fa-brands fa-paypal"></i></li>
+        <li><i class="fa-brands fa-apple-pay"></i></li>
+        <li><i class="fa-brands fa-google-pay"></i></li>
+        <li><img src="./src/assets/paytm-Photoroom.png" alt="error" width="40px" height="40px"></li>
+      </div>
+    </div>
 
-	<section id="ads" class="ads">
-		<fieldset class="custom-fieldset">
-			<legend class="custom-legend">Ads section</legend>
-			<div class="content">
-				Your ads will appear here
-			</div>
-		</fieldset>
-	</section>
+    <div class="foot-panel5">
+      <div class="pages">
+        <a>Conditions of Use</a>
+        <a>Privacy Notice</a>
+        <a>Your Ads Privacy Choices</a>
+      </div>
+      <div class="copyright">
+        © 2025 StarStore
+      </div>
+    </div>
 
-	<hr class="line" />
+  </footer>
 
-	<h2 class="home-header">GAMES TOP-UP</h2>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script type="module" src="./src/firebase.ts"></script>
 
-	<div id="games-list" class="games-list">
-	</div>
-
-    <main>
-		<div id="history">
-			<div class="foot-panel1">
-				<h2 class="text-center">
-					<a href="./login.html">Sign in</a> for safer transactions and a better experience
-				</h2>
-				<p class="text-center">New customer? <a href="#">Start here</a></p>
-			</div>
-		</div>
-
-		<div class="order-tracking-container order-tracking-container-hide">
-			<div class="order-tracking-background"></div>
-			<div class="order-tracking order-tracking-hide">
-				<h2>Track Order</h2>
-				<div class="input-area">
-					<input id="order-id-input" placeholder="Order ID" type="text" />
-					<button id="track-button">Track</button>
-				</div>
-				<div id="order-status">
-					<div class="placeholder">
-						Your order will appear here
-					</div>
-				</div>
-			</div>
-		</div>
-      
-
-		<!-- End of section -->
-    </main>
-    <footer>
-        
-        <div class="foot-panel2">
-           <a href="#top">Back to top</a>
-        </div>
-
-        <div class="foot-panel3">
-            <div class="foot-desc">
-                <h3>Get To Know Us</h3>
-                <p><a>About Us</a></p>
-                <p><a>Our Team</a></p>
-                <p><a>Our Policies</a></p>
-            </div>
-            <div class="foot-desc">
-                <h3>Connect with Us</h3>
-                <div class="social">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="foot-desc">
-                <h3>Developed & Managed by</h3>
-                <p>CODENEST Digital solutions pvt.ltd</p>
-            </div>
-            <div class="foot-desc">
-                <h3>Our Guarantees</h3>
-                <p><a>100% Safe and Secure</a></p>
-                <p><a>Fast Transcations</a></p>
-                <p> <a>Refund Policy</a></p>
-                <p><a>100% Purchase Protection</a></p>
-                <p><a>Help</a></p>
-            </div>
-        </div>
-        <hr style="background-color: #fff;">
-        <div class="foot-payment">
-            <h3 style="margin-top: 10px;">PAYMENTS</h3>
-            <div class="payments">
-                <li><i class="fa-brands fa-paypal"></i></li>
-                <li><i class="fa-brands fa-apple-pay"></i></li>
-                <li><i class="fa-brands fa-google-pay"></i></li>
-                <li><img src="./src/assets/paytm-Photoroom.png" alt="error" width="40px" height="40px"></li>
-            </div>
-        </div>
-
-        <div class="foot-panel5">
-            <div class="pages">
-                <a>Conditions of Use</a>
-                <a>Privacy Notice</a>
-                <a>Your Ads Privacy Choices</a>
-            </div>
-            <div class="copyright">
-                © 2025 StarStore
-            </div>
-        </div>
-        
-    </footer>
-
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script type="module" src="./src/firebase.ts"></script>
-
-	<!-- All other scripts can go here -->
-	<script type="module" src="./src/script.ts"></script>
-	<script type="module" src="./src/main.ts"></script>
-	<script type="module" src="./src/tracking.ts"></script>
-	<script type="module" src="./src/header.ts"></script>
-
+  <!-- All other scripts can go here -->
+  <script type="module" src="./src/script.ts"></script>
+  <script type="module" src="./src/main.ts"></script>
+  <script type="module" src="./src/tracking.ts"></script>
+  <script type="module" src="./src/header.ts"></script>
 </body>
 </html>
