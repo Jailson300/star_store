@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STAR STORE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STAR STORE</title>
 
-	<!-- Required scripts and stylesheets -->
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<!-- End of section -->
+  <!-- Required scripts and stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- End of section -->
 
-	<!-- Custom scripts and stylesheets -->
-     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/modals.css">
-    <link rel="stylesheet" href="./css/tracking.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/adsection.css">
-    <link rel="stylesheet" href="./css/home.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+  <!-- Custom scripts and stylesheets -->
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/modals.css">
+  <link rel="stylesheet" href="./css/tracking.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/adsection.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
 </head>
 <!-- Important! Every <body> element has to have either "dark" or "light" class -->
 <body class="light">
@@ -74,14 +74,32 @@
   </header>
 
   <section id="ads" class="ads">
-       <div class="image-slider">
-          <div class="slider-wrapper">
-              <img src="./src/assets/ads (1).jpeg" alt="Slide 1">
-              <img src="./src/assets/ads (2).jpeg" alt="Slide 2">
-              <img src="./src/assets/ads (3).jpeg" alt="Slide 3">
-              <img src="./src/assets/ads (4).jpeg" alt="Slide 4">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!-- image should ALWAYS be put inside a container -->
+          <!-- This makes it easier to style, scale, make it responsive etc. Visit adsection.css for details on how I styled this -->
+          <div class="img-container">
+            <img src="./src/assets/ads (1).jpeg" alt="Slide 1">
           </div>
-        </div> 
+        </div>
+        <div class="swiper-slide">
+          <div class="img-container">
+            <img src="./src/assets/ads (2).jpeg" alt="Slide 1">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="img-container">
+            <img src="./src/assets/ads (3).jpeg" alt="Slide 1">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="img-container">
+            <img src="./src/assets/ads (4).jpeg" alt="Slide 1">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <hr class="line" />
@@ -170,6 +188,11 @@
   <script type="module" src="./src/main.ts"></script>
   <script type="module" src="./src/tracking.ts"></script>
   <script type="module" src="./src/header.ts"></script>
+  <script type="module" src="./src/swiper.ts"></script>
+  <!--
+  We are using ES6 modules, so we need to use the type="module" attribute on our script tags
   <script src="./src/ads.js"></script>
+  -->
+  <script type="module" src="./src/ads.js"></script>
 </body>
 </html>

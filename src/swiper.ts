@@ -11,17 +11,7 @@ const swiper = new Swiper('.swiper', {
 		disableOnInteraction: false,
 	},
 
-	slidesPerView: 2,
-	spaceBetween: 20,
-	centeredSlides: true,
-	breakpoints: {
-		640: {
-			slidesPerView: 4,
-		},
-		1880: {
-			slidesPerView: 6,
-		},
-	}
+	slidesPerView: 1,
 });
 
 // Turns out we don't need this
@@ -50,6 +40,5 @@ const swiper2 = new Swiper('.swiper2', {
 			slidesPerView: 6,
 		},
 	}
-
 });
 */

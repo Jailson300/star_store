@@ -1,18 +1,45 @@
 
 
 #ads {
-	padding: 0.5rem;
 	margin: 0.5rem;
 	border-radius: 10px;
 	background: var(--foreground);
+  overflow: hidden;
 }
 
-#ads .content {
-	width: 100%;
-	height: 10rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* The image container */
+#ads .img-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+
+  /* From here -> */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* To here. This section makes sure the image is centered
+   * inside the image container. It also prevents the image from
+   * overflowing out of the image container. 
+   * If the image is too big, it will be cropped. */
+}
+
+#ads .img-container > img {
+  /* You can change the width and height to whatever you want
+   * You could even remove one of them. 
+   * */
+  width: 100%;
+  height: 100%;
+  /* Removing the width attribute and keeping only the height
+   * will make the image always as tall as the image container
+   * and if it's width is too big, it will be cropped.
+   * height: 100%;*/
+  /* Removing the height attribute and keeping only the width
+   * will make the image always as wide as the image container
+   * and if it's height is too big, it will be cropped.
+   * width: 100%;*/
+
+  /* The "cover" value of the object-fit property makes the image cover the entire image container */
+  object-fit: cover;
 }
 
 .image-slider {
