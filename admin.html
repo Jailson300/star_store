@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR STORE</title>
+
+    <!-- Required scripts and stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://kit.fontawesome.com/b59cd0abe1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- End of section -->
+
+    <!-- Custom scripts and stylesheets -->
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/modals.css">
+    <link rel="stylesheet" href="./css/tracking.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/adsection.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+  </head>
+  <body>
+    <div class="admin-header">
+      <input type="text" name="search" value="" placeholder="Search by Username, ID, Server or PaymentID" id="search-input">
+      <select id="filter-select">
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="done">Done</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+    <ul id="admin-list">
+      <li>
+        <table>
+          <tr>
+            <td>Username</td>
+            <td>Rain</td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>454855763</td>
+          </tr>
+          <tr>
+            <td>Server</td>
+            <td>2321</td>
+          </tr>
+          <tr>
+            <td>Package</td>
+            <td>706 Dias</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Rs 850</td>
+          </tr>
+          <tr>
+            <td>PaymentID</td>
+            <td>pay_RC9ma662aIWSAn</td>
+          </tr>
+          <tr>
+            <td>OrderID</td>
+            <td>order_RC9m5x8uiZPHyi</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>Pending</td>
+          </tr>
+        </table>
+        <div class="admin-buttons">
+          <div>
+            <button id="reject-button">Reject</button>
+            <button id="accept-button">Done</button>
+          </div>
+          <button id="delete-button">Delete</button>
+        </div>
+      </li>
+    </ul>
+  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script type="module" src="./src/firebase.ts"></script>
+
+    <!-- All other scripts can go here -->
+    <script type="module" src="./src/admin.ts"></script>
+  </body>
+</html>

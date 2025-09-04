@@ -1,0 +1,107 @@
+body {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#admin-list {
+  list-style: none;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#admin-list li {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#reject-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+#reject-button:hover {
+  background-color: #e60000;
+}
+
+#accept-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+#accept-button:hover {
+  background-color: #3e8e41;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#delete-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+#delete-button:hover {
+  background-color: #e60000;
+}
+
+.highlight {
+  background-color: #ffffcc;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.admin-header > input {
+  flex-grow: 1;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.admin-header > select {
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
