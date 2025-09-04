@@ -45,6 +45,20 @@ body {
   background-color: #e60000;
 }
 
+#revoke-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #ffff00; /* yellow */
+  color: black;
+  cursor: pointer;
+}
+
+#revoke-button:hover {
+  background-color: #cccc00; /* darker yellow on hover */
+}
+
 #accept-button {
   margin-top: 0.5rem;
   padding: 0.5rem;
@@ -80,7 +94,8 @@ body {
 }
 
 .highlight {
-  background-color: #ffffcc;
+  background-color: red;
+  color: white;
 }
 
 .admin-header {

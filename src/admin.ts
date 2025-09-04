@@ -1,4 +1,4 @@
-import { collection, query, where, orderBy, getDocs, getFirestore, onSnapshot } from 'firebase/firestore'
+import { collection, query, where, orderBy, getDocs, getFirestore, onSnapshot, doc, updateDoc } from 'firebase/firestore'
 import { onAuthStateChanged } from 'firebase/auth'
 import { app, auth } from "./firebase"
 import { showTrackingForm } from "./tracking"
@@ -71,12 +71,68 @@ const renderList = (items: Order[], term: string, term2?: string) => {
       </table>
       <div class="admin-buttons">
         <div>
-          <button id="reject-button">Reject</button>
-          <button id="accept-button">Done</button>
+          ${
+            data.status === 'pending' ? `
+              <button id="reject-button">Reject</button>
+              <button id="accept-button">Done</button>
+            ` : data.status === 'done' ? `
+              <button id="reject-button">Reject</button>
+              <button id="revoke-button">Revoke</button>
+            ` : data.status === 'rejected' ? `
+              <button id="revoke-button">Revoke</button>
+              <button id="accept-button">Done</button>
+            ` : ''
+          }
         </div>
         <button id="delete-button">Delete</button>
       </div>
     `
+
+    const deleteButton = listItem.querySelector("#delete-button")
+    const acceptButton = listItem.querySelector("#accept-button")
+    const rejectButton = listItem.querySelector("#reject-button")
+    const revokeButton = listItem.querySelector("#revoke-button")
+
+    acceptButton?.addEventListener('click', (e) => {
+      e.preventDefault()
+      const docRef = doc(db, "tenants", "star-store-lhgmd", "orders", data.order_id)
+      updateDoc(docRef, { status: 'done' }).then(() => {
+        listItem.remove()
+      }).catch((error) => {
+        console.error("Error updating document: ", error)
+      })
+    })
+
+    rejectButton?.addEventListener('click', (e) => {
+      e.preventDefault()
+      const docRef = doc(db, "tenants", "star-store-lhgmd", "orders", data.order_id)
+      updateDoc(docRef, { status: 'rejected' }).then(() => {
+        listItem.remove()
+      }).catch((error) => {
+        console.error("Error updating document: ", error)
+      })
+    })
+
+    revokeButton?.addEventListener('click', (e) => {
+      e.preventDefault()
+      const docRef = doc(db, "tenants", "star-store-lhgmd", "orders", data.order_id)
+      updateDoc(docRef, { status: 'pending' }).then(() => {
+        listItem.remove()
+      }).catch((error) => {
+        console.error("Error updating document: ", error)
+      })
+    })
+
+    deleteButton?.addEventListener('click', (e) => {
+      e.preventDefault()
+      alert("Delete is disabled for safety. You can change the status to 'rejected' or 'pending' and filter them out.")
+      //const docRef = doc(db, "tenants", "star-store-lhgmd", "orders", data.order_id)
+      //updateDoc(docRef, { status: 'deleted' }).then(() => {
+      //  listItem.remove()
+      //}).catch((error) => {
+      //  console.error("Error updating document: ", error)
+      //})
+    })
 
     // Highlight search term
     const searchables = listItem.querySelectorAll("td:nth-child(2)")
@@ -118,6 +174,7 @@ const applyFilters = () => {
 }
 
 const unsubscribe = onSnapshot(collRef, (snapshot) => {
+  listItems = []
   snapshot.forEach((doc) => {
     const data = doc.data() as Order
     listItems.push(data)
