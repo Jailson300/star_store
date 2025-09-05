@@ -10,7 +10,8 @@ export default defineConfig({
 				contact: resolve(__dirname, 'contact.html'),
 				login: resolve(__dirname, 'login.html'),
 				order: resolve(__dirname, 'order.html'),
-				mlbb: resolve(__dirname, 'mlbb.html')
+				mlbb: resolve(__dirname, 'mlbb.html'),
+        admin: resolve(__dirname, 'admin.html')
 			}
 		}
 	}
