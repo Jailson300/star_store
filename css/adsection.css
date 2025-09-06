@@ -1,16 +1,25 @@
-
-
 #ads {
 	margin: 0.5rem;
-	border-radius: 10px;
-	background: var(--foreground);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ads > .swiper {
+  width: 100%;
+  max-width: 50rem;
   overflow: hidden;
+	border-radius: 10px;
+  aspect-ratio: 16/9;
+	background: var(--foreground);
 }
 
 /* The image container */
 #ads .img-container {
   width: 100%;
   aspect-ratio: 16/9;
+	border-radius: 10px;
 
   /* From here -> */
   overflow: hidden;
